@@ -11,4 +11,15 @@ Groupe composé de :
 But du projet :
 
     Création d'un mini jeu
+    
+    
+    
+gitignore : 
+
+
+.gitignore
+.classpath
+.project
+bin/
+
 
