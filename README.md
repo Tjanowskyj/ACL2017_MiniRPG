@@ -40,6 +40,7 @@ Fonctionnalités :
     Les fantômes sont des monstres qui peuvent traverser les murs.
     Le héros est tué au contact d’un monstre. 
     Le héros a des points de vie.
+    Le héros peut récupérer des points de vie en trouvant une potion.
     Le héros prend des dégats au contact d'un monstre.
     Le héros peut attaquer les montres avec lequel il est en contact - les deux perdent
     des points de vie.
