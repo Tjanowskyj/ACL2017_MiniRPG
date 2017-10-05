@@ -10,7 +10,7 @@ Groupe composé de :
 
 But du projet :
 
-    Création d'un mini jeu style zelda
+    Création d'un mini jeu style zelda, RPG
         
 gitignore : 
 
@@ -26,7 +26,9 @@ Fonctionnalités :
     Version graphique avec des sprites.
     Le héros est placé sur le plateau de jeu et peu s’y déplacer à l’intérieur. 
     Le labyrinthe est généré par défaut - le héros et les monstres ne peuvent pas traverser les murs.
-    Le labyrinthe est généré à partir d’un fichier. 
+    Le labyrinthe est généré à partir d’un fichier.
+    Ajout d'une clé et une porte de sortie pour chaque labyrinthe.
+    Le héros doit récupérer la clé pour dévérouiller la porte de sortie.  
     Le labyrinthe est généré en fonction du niveau sélectionné.
     Certains cases du labyrinthe sont spéciales : 
         • trésor : si le héros arrive sur la case il a gagné le jeu 
@@ -48,4 +50,5 @@ Fonctionnalités :
     Menu du jeu et menu sélection des niveaux.
     Tableau des scores.
     Sauvegarde de parties.
-    Charger une partie.    
+    Charger une partie.
+        
