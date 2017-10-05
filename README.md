@@ -44,7 +44,7 @@ Fonctionnalités :
     Le héros peut attaquer les montres avec lequel il est en contact - les deux perdent
     des points de vie.
     Le héros peut attaquer les montres sur la case adjacente.
-    Le joueur clique sur une touche pour que le héros attaque (coup par coup)
+    Le joueur appuie sur une touche pour que le héros attaque (coup par coup)
     Plusieurs labyrinthes à terminer pour terminer le jeu.
     Écran victoire,défaite.
     Menu du jeu et menu sélection des niveaux.
