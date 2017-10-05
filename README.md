@@ -10,16 +10,13 @@ Groupe composé de :
 
 But du projet :
 
-    Création d'un mini jeu
-    
-    
-    
+    Création d'un mini jeu style zelda
+        
 gitignore : 
 
-
-.gitignore
-.classpath
-.project
-bin/
+    .gitignore
+    .classpath
+    .project
+    bin/
 
 
