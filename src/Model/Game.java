@@ -10,8 +10,8 @@ public class Game extends Observable {
     private VueTerminal vueTerminal;
 
     public Game(){
-        this.labyrinthe = new Labyrinthe();
-        this.personnage = new Hero(5,5,30);
+        this.labyrinthe = new Labyrinthe(10);
+        this.personnage = new Hero(5,5,30, this);
         this.vueTerminal = new VueTerminal();
         this.addObserver(this.vueTerminal);
         this.setChanged();
@@ -28,8 +28,8 @@ public class Game extends Observable {
         return this.labyrinthe;
     }
 
-    public static boolean dispo(int x, int y){
-        return labyrinthe.getCase(x,y) == 0 ;
+    public boolean dispo(int x, int y){
+        return this.labyrinthe.getCase(x,y) == 0 ;
     }
 
 }
