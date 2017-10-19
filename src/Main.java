@@ -1,4 +1,9 @@
+import Model.Game;
+
+
 
 public class Main {
-	public int test2;
+	public static void main(String[]args){
+		Game g = new Game();
+	}
 }
