@@ -1,8 +1,11 @@
 package Model;
 
-import java.awt.event.ActionListener;
 import java.util.Observable;
+
+import Controller.Deplacement;
 import View.VueTerminal;
+
+import javax.swing.*;
 
 public class Game extends Observable {
 
