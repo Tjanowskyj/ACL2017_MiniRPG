@@ -19,19 +19,19 @@ public abstract class Personnage {
 	public void bouger(String s){
 		switch (s){
 			case "droite":
-				if(Game.dispo(this.posX+1,this.posY))
+				if(this.g.dispo(this.posX+1,this.posY))
 					this.posX = this.posX+1;
 				break;
 			case "gauche":
-				if(Game.dispo(this.posX-1,this.posY))
+				if(this.g.dispo(this.posX-1,this.posY))
 					this.posX = this.posX-1;
 				break;
 			case "haut":
-				if(Game.dispo(this.posX,this.posY-1))
+				if(this.g.dispo(this.posX,this.posY-1))
 					this.posY = this.posY -1 ;
 				break;
 			case "bas":
-				if(Game.dispo(this.posX,this.posY+1))
+				if(this.g.dispo(this.posX,this.posY+1))
 					this.posY = this.posY +1;
 				break;	
 		}
