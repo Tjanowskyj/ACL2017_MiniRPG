@@ -7,8 +7,8 @@ public class Labyrinthe {
 	
 	
 	public Labyrinthe(int t){
-		if(t<2){
-			t=2;
+		if(t<3){
+			t=3;
 		}
 		this.taille = t;
 		plateau = new int[t][t];
@@ -25,6 +25,10 @@ public class Labyrinthe {
 	
 	public int[][] getPlateau(){
 		return this.plateau;
+	}
+	
+	public int getCase(int i, int j){
+		return this.plateau[i][j];
 	}
 	
 	public int getTaille(){
