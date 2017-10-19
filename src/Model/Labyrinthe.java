@@ -36,7 +36,11 @@ public class Labyrinthe {
 	}
 
 	public void setPersonnage(int x, int y){
-		this.plateau[x][y] = 2;
+		if(x>0 && x<this.taille-1 && y>0 && y<this.taille-1){
+			this.plateau[x][y] = 2;
+		}else{
+			this.plateau[1][1] = 2;
+		}
 	}
 
 }
