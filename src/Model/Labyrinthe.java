@@ -43,4 +43,8 @@ public class Labyrinthe {
 		}
 	}
 
+	public void setCaseVide(int x, int y){
+		this.plateau[x][y] = 0;
+	}
+
 }

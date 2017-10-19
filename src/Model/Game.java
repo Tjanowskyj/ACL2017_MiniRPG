@@ -22,7 +22,9 @@ public class Game extends Observable {
     }
 
     public void bouger(String d){
+        this.labyrinthe.setCaseVide(personnage.getX(),personnage.getY());
         this.personnage.bouger(d);
+        this.labyrinthe.setPersonnage(personnage.getX(),personnage.getY());
         this.setChanged();
         this.notifyObservers();
     }
