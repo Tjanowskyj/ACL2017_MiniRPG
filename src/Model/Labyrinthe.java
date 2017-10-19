@@ -14,7 +14,7 @@ public class Labyrinthe {
 		plateau = new int[t][t];
 		for(int i = 0;i < t;i++){
 			for(int j = 0;j < t;j++){
-				if(i==0 || i==t || j==0 || j==t){
+				if(i==0 || i==t-1 || j==0 || j==t-1){
 					plateau[i][j] = 1; //mur = 1
 				}else{
 					plateau[i][j] = 0; //espace vide
@@ -36,7 +36,11 @@ public class Labyrinthe {
 	}
 
 	public void setPersonnage(int x, int y){
-		this.plateau[x][y] = 2;
+		if(x>0 && x<this.taille-1 && y>0 && y<this.taille-1){
+			this.plateau[x][y] = 2;
+		}else{
+			this.plateau[1][1] = 2;
+		}
 	}
 
 }
