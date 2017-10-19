@@ -1,18 +1,19 @@
 package Model;
 
 import java.util.Observable;
+import View.VueTerminal;
 
 public class Game extends Observable {
 
     private Labyrinthe labyrinthe;
     private Personnage personnage;
-    private VueTerminale vueTerminale;
+    private VueTerminal vueTerminal;
 
     public Game(){
         this.labyrinthe = new Labyrinthe();
-        this.personnage = new Personnage(5,5,30);
-        this.vueTerminale = new VueTerminake();
-        this.addObserver(this.vueTerminale);
+        this.personnage = new Hero(5,5,30);
+        this.vueTerminal = new VueTerminal();
+        this.addObserver(this.vueTerminal);
         this.setChanged();
         this.notifyObservers();
     }
@@ -23,8 +24,8 @@ public class Game extends Observable {
         this.notifyObservers();
     }
 
-    public int[][] getLabyrinthe(){
-        return this.labyrinthe.getPlateau();
+    public Labyrinthe getLabyrinthe(){
+        return this.labyrinthe;
     }
 
     public static boolean dispo(int x, int y){
