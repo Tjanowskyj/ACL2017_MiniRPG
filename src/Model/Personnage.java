@@ -4,12 +4,14 @@ public abstract class Personnage {
 	protected int posX;
 	protected int posY;
 	protected int hp;
+	protected Game g;
 	
 	
-	public Personnage(int x, int y, int vie){
+	public Personnage(int x, int y, int vie, Game game){
 		this.posX = x;
 		this.hp = vie;
 		this.posY = y;
+		this.g = game;
 	}
 	
 	public abstract void attaquer();
