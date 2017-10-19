@@ -65,4 +65,16 @@ Fonctionnalités :
     Tableau des scores.
     Sauvegarde de parties.
     Charger une partie.
+    
+    
+Utilisation de la première version : 
+    
+    Il suffit de lancer le main présent sur le projet
+    L'application ne fait pas grand chose mais permet de déplacer le personnage (ici représenté par "o/") dans un labyrinthe de taille 10*10. Le personnage ne peut pas franchir les limites de ce labyrinthe. 
+    Pour le déplacement, il suffit d'appuyer dans le terminal sur une des touches de déplacements puis de confirmer son choix. Les touches de déplacements sont :
+        - z : haut
+        - q : droite 
+        - s : bas
+        - d : gauche
+    ATTENTION : Il n'est pas possible d'utiliser plusieurs touches en même temps, il faut utiliser une touche, confirmer avec entrée puis refaire la manip pour un autre déplacement. 
         
