@@ -1,5 +1,6 @@
 package Model;
 
+import java.awt.event.ActionListener;
 import java.util.Observable;
 import View.VueTerminal;
 
@@ -17,6 +18,7 @@ public class Game extends Observable {
         this.addObserver(this.vueTerminal);
         this.setChanged();
         this.notifyObservers();
+
     }
 
     public void bouger(String d){
