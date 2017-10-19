@@ -20,6 +20,7 @@ gitignore :
     bin/
 
 Fonctionnalités :
+
     Sprint 1 : 
         Version texte.
         Le labyrinthe est généré par défaut - le héros et les monstres ne peuvent pas traverser les murs.
