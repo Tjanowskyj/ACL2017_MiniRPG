@@ -35,4 +35,8 @@ public class Labyrinthe {
 		return this.taille;
 	}
 
+	public void setPersonnage(int x, int y){
+		this.plateau[x][y] = 2;
+	}
+
 }

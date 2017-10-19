@@ -12,6 +12,7 @@ public class Game extends Observable {
     public Game(){
         this.labyrinthe = new Labyrinthe(10);
         this.personnage = new Hero(5,5,30, this);
+        this.labyrinthe.setPersonnage(5,5);
         this.vueTerminal = new VueTerminal();
         this.addObserver(this.vueTerminal);
         this.setChanged();
