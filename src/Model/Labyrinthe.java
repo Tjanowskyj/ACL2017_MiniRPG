@@ -14,7 +14,7 @@ public class Labyrinthe {
 		plateau = new int[t][t];
 		for(int i = 0;i < t;i++){
 			for(int j = 0;j < t;j++){
-				if(i==0 || i==t || j==0 || j==t){
+				if(i==0 || i==t-1 || j==0 || j==t-1){
 					plateau[i][j] = 1; //mur = 1
 				}else{
 					plateau[i][j] = 0; //espace vide
