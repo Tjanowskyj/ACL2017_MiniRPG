@@ -28,9 +28,8 @@ public class VueTerminal implements Observer {
 					break;
 				}
 			}
-			if( i == plateau.length-1 ){
 				res+="\n";
-			}
+			
 		}
 		System.out.println(res);
 	}
