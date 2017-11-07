@@ -4,11 +4,11 @@ import java.util.Observable;
 import java.util.Observer;
 import Model.Game;
 
-public class VueTerminal implements Observer {
+public class VueTerminal {
 
 	
-	@Override
-	public void update(Observable arg0, Object arg1) {
+	
+	/*public void update(Observable arg0, Object arg1) {
 		String res = "";
 		int[][] plateau = ((Game)arg0).getLabyrinthe().getPlateau();
 		for(int i = 0;i < plateau.length;i++){
@@ -32,6 +32,6 @@ public class VueTerminal implements Observer {
 			
 		}
 		System.out.println(res);
-	}
+	}*/
 
 }

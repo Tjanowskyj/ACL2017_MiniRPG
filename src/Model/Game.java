@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class Game extends Observable {
 
-    private Labyrinthe labyrinthe;
+ /*   private Labyrinthe labyrinthe;
     private Personnage personnage;
     private VueTerminal vueTerminal;
 
@@ -38,6 +38,6 @@ public class Game extends Observable {
 
     public boolean dispo(int x, int y){
         return this.labyrinthe.getCase(x,y) == 0 ;
-    }
+    }*/
 
 }

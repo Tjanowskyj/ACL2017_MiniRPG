@@ -16,7 +16,7 @@ public class Deplacement implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_Z){
+    /*    if(e.getKeyCode() == KeyEvent.VK_Z){
             this.game.bouger("haut");
         }
         if(e.getKeyCode() == KeyEvent.VK_Q){
@@ -27,7 +27,7 @@ public class Deplacement implements KeyListener {
         }
         if(e.getKeyCode() == KeyEvent.VK_D){
             this.game.bouger("droite");
-        }
+        }*/
 
     }
 
