@@ -78,3 +78,12 @@ Utilisation de la première version :
         - d : gauche
     ATTENTION : Il n'est pas possible d'utiliser plusieurs touches en même temps, il faut utiliser une touche, confirmer avec entrée puis refaire la manip pour un autre déplacement. 
         
+        
+Utilisation de la deuxième version :
+    Sur Linux si erreur du type : Failed to open device (/dev/input/event9): Failed to open device /dev/input/event9 (13)
+    alors faire les commandes dans le terminal :    - cd /
+                                                    - sudo chmod o+r /dev/input/*
+                                                    
+    Installation native en fonctino de votre OS sur eclipse : https://docs.adacore.com/gnatbench-docs/src/using_ajis/java_path_config.html
+    Pensez à ajouter toutes les librairies présentes dans le dossier lib.
+
