@@ -20,9 +20,12 @@ public class Map1 extends Map_Globale {
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		this.sbg = sbg;
 		this.map = new TiledMap("res/maps/Map1.tmx");
-		this.p = new Hero(2,2,30);
+		int xJoueur = 2;
+		int yJoueur = 2;
+		this.p = new Hero(xJoueur,yJoueur,30);
 		this.monstres = new ArrayList<Monstre>();
-		this.monstres.add(new Fantome(4,4,5));
+		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
+		//this.monstres.add(new Fantome(4,4,5));
 		initMonstre(gc,sbg);
 		this.p.init(gc, sbg);
 	}
@@ -42,6 +45,7 @@ public class Map1 extends Map_Globale {
 		this.sbg= sbg;
 		this.deplacementHero(gc, p);
 		this.deplacementMonstre();
+		this.degatPersonnage();
 		
 	}
 

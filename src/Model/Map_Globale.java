@@ -76,6 +76,51 @@ public abstract class Map_Globale extends BasicGameState {
 			}
 		}
 	}
+	
+	public Monstre placementMonstre(int i,int xJoueur,int yJoueur) {
+		Random rand = new Random();
+		Monstre res = null;
+		int x = rand.nextInt(map.getWidth());
+		int y = rand.nextInt(map.getHeight());
+		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur)<3) { //tant que la case x,y n'est pas une case vide
+			x = rand.nextInt(map.getWidth()-3)+3;
+			y = rand.nextInt(map.getHeight()-3);
+		}
+		switch(i) {
+		case 0:
+			res = new Fantome(x,y,5);
+			break;
+		default :	
+			break;
+		}
+		
+		return res;
+	}
+	
+	public void degatPersonnage() {
+		int xM,yM,xH,yH;
+		xH = this.p.posX;
+		yH = this.p.posY;
+		boolean dessus,dessous,droite,gauche;
+		Monstre m;
+		for(int i =0;i<monstres.size();i++) {
+			m = monstres.get(i);
+			xM = m.posX;
+			yM = m.posY;
+			dessus = xM==xH && yM<yH;
+			dessous = xM==xH && yM>yH;
+			droite = xM>xH && yM==yH;
+			gauche = xM<xH && yM==yH;
+			if(dessus || dessous || droite || gauche) {
+				m.hp--;
+				p.hp--;
+			}
+			if(m.hp == 0) {
+				monstres.remove(m);
+			}
+		}
+		
+	}
 
 	public void incrementCompteur(){
 		compteur++;
