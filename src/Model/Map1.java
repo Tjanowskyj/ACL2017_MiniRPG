@@ -6,6 +6,8 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
+import java.util.ArrayList;
+
 public class Map1 extends Map_Globale {
 	
 	private int state;
@@ -18,7 +20,10 @@ public class Map1 extends Map_Globale {
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		this.sbg = sbg;
 		this.map = new TiledMap("res/maps/Map1.tmx");
-		this.p = new Hero(2,2);
+		this.p = new Hero(2,2,30);
+		this.monstres = new ArrayList<Monstre>();
+		this.monstres.add(new Fantome(4,4,5));
+		initMonstre(gc,sbg);
 		this.p.init(gc, sbg);
 	}
 
@@ -26,7 +31,8 @@ public class Map1 extends Map_Globale {
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		this.sbg= sbg;
 		this.map.render(0,0);
-		p.render(gc, sbg, g);		
+		p.render(gc, sbg, g);
+		renderMonstre(gc,sbg,g);
 	}
 
 	@Override
@@ -42,5 +48,19 @@ public class Map1 extends Map_Globale {
 		// TODO Auto-generated method stub
 		return this.state;
 	}
+
+	private void initMonstre(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		for(Monstre m : monstres){
+			m.init(gc,sbg);
+		}
+	}
+
+	private void renderMonstre(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		for(Monstre m : monstres){
+			m.render(gc,sbg,g);
+		}
+	}
+
+
 
 }

@@ -1,16 +1,18 @@
 package Model;
 
+import org.newdawn.slick.Image;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.tiled.TiledMap;
 
 public abstract class Personnage extends BasicGameState {
 	protected int posX;
 	protected int posY;
-	protected int hp;	
+	protected int hp;
+	protected Image image;
 	
-	public Personnage(int x, int y){
+	public Personnage(int x, int y, int hp){
 		this.posX = x;
-		this.hp = 3;
+		this.hp = hp;
 		this.posY = y;
 	}
 	

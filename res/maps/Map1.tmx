@@ -3,12 +3,17 @@
  <tileset firstgid="1" source="base.tsx"/>
  <layer name="Sol" width="10" height="10">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAxNmYGAQHsWDBgMA9CmQ3ZABAAA=
+   H4sIAAAAAAAAExNmYGAQHsWDBgMA9CmQ3ZABAAA=
   </data>
  </layer>
  <layer name="Obstacles" width="10" height="10">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA5NiYGCQIhITAkNRnR4Q6xOhzhaI7YhQ5wPEvjjUEYMBsmKYCJABAAA=
+   H4sIAAAAAAAAE5NiYGCQIhITAqPq8KsjBgMA6k27qJABAAA=
+  </data>
+ </layer>
+ <layer name="Fantôme" width="10" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAE2NgIB9IkaiOkHopJEyue9D14jILJq4HxPpEqLMFYjsi3OYDxL5EqMMFAP5astWQAQAA
   </data>
  </layer>
 </map>

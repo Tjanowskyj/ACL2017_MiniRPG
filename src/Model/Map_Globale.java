@@ -8,6 +8,8 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
+import java.util.List;
+
 public abstract class Map_Globale extends BasicGameState {
 
 	// protected ArrayList<Monstre> tab_monstres;
@@ -15,6 +17,7 @@ public abstract class Map_Globale extends BasicGameState {
 	protected TiledMap map; // carte de la classe Map
 	protected static Hero p;
 	protected StateBasedGame sbg;
+	protected static List<Monstre> monstres;
 
 	public abstract void init(GameContainer gc, StateBasedGame sbg) throws SlickException;
 
