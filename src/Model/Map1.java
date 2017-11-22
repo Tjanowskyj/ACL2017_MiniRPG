@@ -37,9 +37,11 @@ public class Map1 extends Map_Globale {
 
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException {
+		this.incrementCompteur();
 		this.p.update(gc, sbg, arg0);
 		this.sbg= sbg;
 		this.deplacementHero(gc, p);
+		this.deplacementMonstre();
 		
 	}
 

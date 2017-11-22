@@ -9,6 +9,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
 import java.util.List;
+import java.util.Random;
 
 public abstract class Map_Globale extends BasicGameState {
 
@@ -18,6 +19,7 @@ public abstract class Map_Globale extends BasicGameState {
 	protected static Hero p;
 	protected StateBasedGame sbg;
 	protected static List<Monstre> monstres;
+	private static int compteur = 0;
 
 	public abstract void init(GameContainer gc, StateBasedGame sbg) throws SlickException;
 
@@ -49,6 +51,34 @@ public abstract class Map_Globale extends BasicGameState {
 
 		}
 
+	}
+
+	public void deplacementMonstre(){
+		if(compteur > 1000){
+			compteur = 0;
+			for(Monstre m : monstres){
+				Random rand = new Random();
+				int nombreAleatoire = rand.nextInt(4 - 1 + 1) + 1;
+				switch (nombreAleatoire){
+					case 1:
+						m.changeX(1,map);
+						break;
+					case 2:
+						m.changeX(-1,map);
+						break;
+					case 3:
+						m.changeY(1,map);
+						break;
+					case 4:
+						m.changeY(-1,map);
+						break;
+				}
+			}
+		}
+	}
+
+	public void incrementCompteur(){
+		compteur++;
 	}
 
 }
