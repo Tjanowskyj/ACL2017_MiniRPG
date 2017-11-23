@@ -29,9 +29,9 @@ public class Hero extends Personnage{
 
 	public void changeX(int x, TiledMap map) {
 		int objectLayer = map.getLayerIndex("Obstacles");
-		map.getTileId(0, 0, objectLayer);
+		//map.getTileId(0, 0, objectLayer);
 		int fantome = map.getLayerIndex("Fantôme");
-		map.getTileId(0, 0, fantome);
+		//map.getTileId(0, 0, fantome);
 		if (map.getTileId(this.posX + x, this.posY, objectLayer) == 0
 				&& map.getTileId( this.posX + x, this.posY, fantome) == 0) {
 			this.posX += x;
@@ -41,9 +41,9 @@ public class Hero extends Personnage{
 	
 	public void changeY(int y, TiledMap map) {
 		int objectLayer = map.getLayerIndex("Obstacles");
-		map.getTileId(0, 0, objectLayer);
+		//map.getTileId(0, 0, objectLayer);
 		int fantome = map.getLayerIndex("Fantôme");
-		map.getTileId(0, 0, fantome);
+		//map.getTileId(0, 0, fantome);
 		if (map.getTileId(this.posX, this.posY + y, objectLayer) == 0
 			&& map.getTileId( this.posX , this.posY + y, fantome) == 0) {
 			this.posY += y;

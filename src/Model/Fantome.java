@@ -17,7 +17,7 @@ public class Fantome extends Monstre {
     @Override
     public void changeX(int x, TiledMap map) {
         int objectLayer = map.getLayerIndex("Obstacles");
-        map.getTileId(0, 0, objectLayer);
+        //map.getTileId(0, 0, objectLayer);
         if (map.getTileId(this.posX + x, this.posY, objectLayer) == 0) {
             this.posX += x;
         }
@@ -26,7 +26,7 @@ public class Fantome extends Monstre {
     @Override
     public void changeY(int y, TiledMap map) {
         int objectLayer = map.getLayerIndex("Obstacles");
-        map.getTileId(0, 0, objectLayer);
+        //map.getTileId(0, 0, objectLayer);
         if (map.getTileId(this.posX, this.posY + y, objectLayer) == 0) {
             this.posY += y;
         }

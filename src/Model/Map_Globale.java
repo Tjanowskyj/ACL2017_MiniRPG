@@ -85,17 +85,14 @@ public abstract class Map_Globale extends BasicGameState {
 	public Monstre placementMonstre(int i,int xJoueur,int yJoueur) {
 		Random rand = new Random();
 		Monstre res = null;
-		int x = rand.nextInt(map.getWidth());
-		int y = rand.nextInt(map.getHeight());
-		int objectLayer = map.getLayerIndex("Obstacles");
-		map.getTileId(0, 0, objectLayer);
+		int x = rand.nextInt(map.getWidth() - 2) +1;
+		int y = rand.nextInt(map.getHeight() - 2) +1;
 		int fantome = map.getLayerIndex("Fantôme");
-		map.getTileId(0, 0, fantome);
-		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur)<3
-				&& map.getTileId( x, y, objectLayer) != 0
-				&& map.getTileId( x, y, fantome) != 0) { //tant que la case x,y n'est pas une case vide
-			x = rand.nextInt(map.getWidth()-3)+3;
-			y = rand.nextInt(map.getHeight()-3);
+		int obstacle = map.getLayerIndex("Obstacles");
+		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur) < 3
+				&& map.getTileId( x, y, fantome) != 0 && map.getTileId(x,y,obstacle) == 1) { //tant que la case x,y n'est pas une case vide
+			x = rand.nextInt(map.getWidth()-2)+1;
+			y = rand.nextInt(map.getHeight()-2)+1;
 		}
 		switch(i) {
 		case 0:
