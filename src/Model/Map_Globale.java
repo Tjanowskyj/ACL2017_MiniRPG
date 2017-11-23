@@ -87,7 +87,13 @@ public abstract class Map_Globale extends BasicGameState {
 		Monstre res = null;
 		int x = rand.nextInt(map.getWidth());
 		int y = rand.nextInt(map.getHeight());
-		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur)<3) { //tant que la case x,y n'est pas une case vide
+		int objectLayer = map.getLayerIndex("Obstacles");
+		map.getTileId(0, 0, objectLayer);
+		int fantome = map.getLayerIndex("Fantôme");
+		map.getTileId(0, 0, fantome);
+		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur)<3
+				&& map.getTileId( x, y, objectLayer) != 0
+				&& map.getTileId( x, y, fantome) != 0) { //tant que la case x,y n'est pas une case vide
 			x = rand.nextInt(map.getWidth()-3)+3;
 			y = rand.nextInt(map.getHeight()-3);
 		}
