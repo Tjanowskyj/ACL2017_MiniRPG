@@ -12,14 +12,8 @@ public class Hero extends Personnage{
 
 
 	public Hero(int x, int y, int hp) {
-		super(x, y,hp);
-	}
+		super(x, y,hp); }
 
-	@Override
-	public void attaquer() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
@@ -31,11 +25,7 @@ public class Hero extends Personnage{
 		this.image.draw(this.posX * 32, this.posY * 32);
 	}
 
-	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	public void changeX(int x, TiledMap map) {
 		int objectLayer = map.getLayerIndex("Obstacles");
@@ -60,10 +50,6 @@ public class Hero extends Personnage{
 		}		
 	}
 
-	@Override
-	public int getID() {
-		// TODO Auto-generated method stub
-		return -1;
-	}
+
 
 }

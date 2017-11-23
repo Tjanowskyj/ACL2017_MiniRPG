@@ -33,21 +33,25 @@ public abstract class Map_Globale extends BasicGameState {
 		if (gc.getInput().isKeyPressed(Input.KEY_D)) {
 
 			this.p.changeX(1, map);
+			degatPersonnage();
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_Q)) {
 
 			this.p.changeX(-1,  map);
+			degatPersonnage();
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_Z)) {
 
 			this.p.changeY(-1, map);
+			degatPersonnage();
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_S)) {
 
 			this.p.changeY(1, map);
+			degatPersonnage();
 
 		}
 
@@ -74,6 +78,7 @@ public abstract class Map_Globale extends BasicGameState {
 						break;
 				}
 			}
+			degatPersonnage();
 		}
 	}
 	

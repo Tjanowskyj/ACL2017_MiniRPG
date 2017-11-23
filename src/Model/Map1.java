@@ -45,7 +45,7 @@ public class Map1 extends Map_Globale {
 		this.sbg= sbg;
 		this.deplacementHero(gc, p);
 		this.deplacementMonstre();
-		this.degatPersonnage();
+		//this.degatPersonnage();
 		
 	}
 

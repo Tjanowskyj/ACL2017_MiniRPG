@@ -1,7 +1,10 @@
 package Model;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
+import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
 public abstract class Personnage extends BasicGameState {
@@ -16,38 +19,19 @@ public abstract class Personnage extends BasicGameState {
 		this.posY = y;
 	}
 	
-	public abstract void attaquer();
-	
-	/*public void bouger(String s){
-		switch (s){
-			case "droite":
-				if(this.g.dispo(this.posX,this.posY+1))
-					this.posY = this.posY+1;
-				break;
-			case "gauche":
-				if(this.g.dispo(this.posX,this.posY-1))
-					this.posY = this.posY-1;
-				break;
-			case "haut":
-				if(this.g.dispo(this.posX-1,this.posY))
-					this.posX = this.posX -1 ;
-				break;
-			case "bas":
-				if(this.g.dispo(this.posX+1,this.posY))
-					this.posX = this.posX +1;
-				break;	
-		}
-	}*/
-	
 	public abstract void changeX(int x, TiledMap map);
 	
 	public abstract void changeY(int y, TiledMap map);
 
-	public int getX(){
-		return this.posX;
+	@Override
+	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
+		// TODO Auto-generated method stub
+
 	}
 
-	public int getY(){
-		return this.posY;
+	@Override
+	public int getID() {
+		// TODO Auto-generated method stub
+		return -1;
 	}
 }

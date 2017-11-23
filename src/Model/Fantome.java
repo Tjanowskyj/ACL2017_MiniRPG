@@ -15,11 +15,6 @@ public class Fantome extends Monstre {
     }
 
     @Override
-    public void attaquer() {
-
-    }
-
-    @Override
     public void changeX(int x, TiledMap map) {
         int objectLayer = map.getLayerIndex("Obstacles");
         map.getTileId(0, 0, objectLayer);
@@ -37,11 +32,6 @@ public class Fantome extends Monstre {
         }
     }
 
-    @Override
-    public int getID() {
-        // TODO Auto-generated method stub
-        return -1;
-    }
 
     @Override
     public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
@@ -53,8 +43,4 @@ public class Fantome extends Monstre {
         this.image.draw(this.posX * 32, this.posY * 32);
     }
 
-    @Override
-    public void update(GameContainer gameContainer, StateBasedGame stateBasedGame, int i) throws SlickException {
-        // TODO Auto-generated method stub
-    }
 }
