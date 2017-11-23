@@ -27,7 +27,7 @@ Fonctionnalités :
         Le héros est placé sur le plateau de jeu et peu s’y déplacer à l’intérieur. 
     
     Sprint 2 : 
-        Version graphique avec des formes.
+        Version graphique avec des sprites.
         Des monstres sont placés de manière aléatoire dans le labyrinthe.
         Les monstres se déplacent de manière aléatoire.
         Les fantômes sont des monstres qui peuvent traverser les murs.
@@ -38,7 +38,6 @@ Fonctionnalités :
         
         
     Suite :
-    Version graphique avec des sprites.
     
     Le labyrinthe est généré à partir d’un fichier.
     Ajout d'une clé et une porte de sortie pour chaque labyrinthe.
