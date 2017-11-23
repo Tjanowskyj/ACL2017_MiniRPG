@@ -12,6 +12,7 @@ public class Jeu extends StateBasedGame {
 	
 	public static final String NAME = "MiniRPG"; //nom du jeu
 	public static final int MAP1 = 1; //Identifiant de la carte 1
+	public static final int FPS = 60;
 	public static AppGameContainer agc;
 
 	
@@ -32,8 +33,9 @@ public class Jeu extends StateBasedGame {
 		AppGameContainer agc;
 		try {
 			agc = new AppGameContainer(new Jeu(NAME));
+			agc.setTargetFrameRate(FPS);
 			agc.setDisplayMode(320, 320, false); //largeur, hauteur, plein écran
-			agc.setShowFPS(false);//affichage du nombre d'images par seconde 
+			agc.setShowFPS(true);//affichage du nombre d'images par seconde
 			agc.start(); // lancement du jeu
 		}catch(SlickException e) {
 			e.printStackTrace();

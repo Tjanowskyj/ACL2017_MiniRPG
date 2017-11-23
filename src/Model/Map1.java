@@ -46,10 +46,9 @@ public class Map1 extends Map_Globale {
 		this.incrementCompteur();
 		this.p.update(gc, sbg, arg0);
 		this.sbg= sbg;
+		this.degatPersonnage();
 		this.deplacementHero(gc, p);
 		this.deplacementMonstre();
-		//this.degatPersonnage();
-		
 	}
 
 	@Override

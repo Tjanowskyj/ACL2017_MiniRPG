@@ -33,32 +33,32 @@ public abstract class Map_Globale extends BasicGameState {
 		if (gc.getInput().isKeyPressed(Input.KEY_D)) {
 
 			this.p.changeX(1, map);
-			degatPersonnage();
+			//degatPersonnage();
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_Q)) {
 
 			this.p.changeX(-1,  map);
-			degatPersonnage();
+			//degatPersonnage();
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_Z)) {
 
 			this.p.changeY(-1, map);
-			degatPersonnage();
+			//degatPersonnage();
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_S)) {
 
 			this.p.changeY(1, map);
-			degatPersonnage();
+			//degatPersonnage();
 
 		}
 
 	}
 
 	public void deplacementMonstre(){
-		if(compteur > 1000){
+		if(compteur > 60){
 			compteur = 0;
 			for(Monstre m : monstres){
 				Random rand = new Random();
@@ -78,7 +78,7 @@ public abstract class Map_Globale extends BasicGameState {
 						break;
 				}
 			}
-			degatPersonnage();
+			//degatPersonnage();
 		}
 	}
 	
@@ -106,28 +106,30 @@ public abstract class Map_Globale extends BasicGameState {
 	}
 	
 	public void degatPersonnage() {
-		int xM,yM,xH,yH;
-		xH = this.p.posX;
-		yH = this.p.posY;
-		boolean dessus,dessous,droite,gauche;
-		Monstre m;
-		for(int i =0;i<monstres.size();i++) {
-			m = monstres.get(i);
-			xM = m.posX;
-			yM = m.posY;
-			dessus = xM==xH && yM<yH;
-			dessous = xM==xH && yM>yH;
-			droite = xM>xH && yM==yH;
-			gauche = xM<xH && yM==yH;
-			if(dessus || dessous || droite || gauche) {
-				m.hp--;
-				p.hp--;
-			}
-			if(m.hp == 0) {
-				monstres.remove(m);
+		if(compteur > 60) {
+
+			int xM, yM, xH, yH;
+			xH = this.p.posX;
+			yH = this.p.posY;
+			boolean dessus, dessous, droite, gauche;
+			Monstre m;
+			for (int i = 0; i < monstres.size(); i++) {
+				m = monstres.get(i);
+				xM = m.posX;
+				yM = m.posY;
+				dessus = xM == xH && yM < yH;
+				dessous = xM == xH && yM > yH;
+				droite = xM > xH && yM == yH;
+				gauche = xM < xH && yM == yH;
+				if (dessus || dessous || droite || gauche) {
+					m.hp--;
+					p.hp--;
+				}
+				if (m.hp == 0) {
+					monstres.remove(m);
+				}
 			}
 		}
-		
 	}
 
 	public void incrementCompteur(){
