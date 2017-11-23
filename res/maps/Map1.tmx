@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" source="base.tsx"/>
- <layer name="Sol" width="10" height="10">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="Atlas.tsx"/>
+ <layer name="Sol" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAExNmYGAQHsWDBgMA9CmQ3ZABAAA=
+   H4sIAAAAAAAAA1NkZmBQHMWjeBSP4lE8iknEAPE/f8VABgAA
   </data>
  </layer>
- <layer name="Obstacles" width="10" height="10">
+ <layer name="Décorations" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAE5NiYGCQIhITAqPq8KsjBgMA6k27qJABAAA=
+   H4sIAAAAAAAAA2NgGDzgDDPperYz4ZZ7Q4Z55AJi3b4Nj3uRAT3dPgqIB7uIjD9qgn80tpOcfIcPDHTatR2EeQc9jCkNc/QwHqgwBwBCG86TQAYAAA==
   </data>
  </layer>
- <layer name="Fantôme" width="10" height="10">
+ <layer name="Obstacles" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAE2NgIB9IkaiOkHopJEyue9D14jILJq4HxPpEqLMFYjsi3OYDxL5EqMMFAP5astWQAQAA
+   H4sIAAAAAAAAA2NgGNlgHjMDw3wgXsBMHbX7gHL7gfgAEeYRo/YeUO4+ED8gwjxi1P4Dyv0HybMQNo8UtbQChMJ8AiMDw0RG4s0jFOYbgGZtJME8QmF+AWjWRRLMGwxhTiyYRIK/QIBQXG5iJF4tCIzmtYEHAHoXxQdABgAA
+  </data>
+ </layer>
+ <layer name="Frontières" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA1vMzMBwiEp4IRAvBmJqgVHzRs0bNW/UvFHzqGteE5UwyDwA9LPJg0AGAAA=
   </data>
  </layer>
 </map>
