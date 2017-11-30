@@ -28,24 +28,24 @@ public class Hero extends Personnage{
 
 
 	public void changeX(int x, TiledMap map) {
-		int objectLayer = map.getLayerIndex("Obstacles");
+		int frontiere = map.getLayerIndex("Frontières");
 		//map.getTileId(0, 0, objectLayer);
-		int fantome = map.getLayerIndex("Fantôme");
+		int obstacle = map.getLayerIndex("Obstacles");
 		//map.getTileId(0, 0, fantome);
-		if (map.getTileId(this.posX + x, this.posY, objectLayer) == 0
-				&& map.getTileId( this.posX + x, this.posY, fantome) == 0) {
+		if (map.getTileId(this.posX + x, this.posY, frontiere) == 0
+				&& map.getTileId( this.posX + x, this.posY, obstacle) == 0) {
 			this.posX += x;
 		}
 	}
 
 	
 	public void changeY(int y, TiledMap map) {
-		int objectLayer = map.getLayerIndex("Obstacles");
+		int frontiere = map.getLayerIndex("Frontières");
 		//map.getTileId(0, 0, objectLayer);
-		int fantome = map.getLayerIndex("Fantôme");
+		int obstacle = map.getLayerIndex("Obstacles");
 		//map.getTileId(0, 0, fantome);
-		if (map.getTileId(this.posX, this.posY + y, objectLayer) == 0
-			&& map.getTileId( this.posX , this.posY + y, fantome) == 0) {
+		if (map.getTileId(this.posX, this.posY + y, frontiere) == 0
+			&& map.getTileId( this.posX , this.posY + y, obstacle) == 0) {
 			this.posY += y;
 		}		
 	}

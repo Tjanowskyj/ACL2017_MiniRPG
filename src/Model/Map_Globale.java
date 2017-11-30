@@ -8,6 +8,8 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
+import Controlers.Controlers;
+
 import java.util.List;
 import java.util.Random;
 
@@ -30,31 +32,7 @@ public abstract class Map_Globale extends BasicGameState {
 	public abstract int getID();
 
 	public void deplacementHero(GameContainer gc, Hero personnage) {
-		if (gc.getInput().isKeyPressed(Input.KEY_D)) {
-
-			this.p.changeX(1, map);
-			//degatPersonnage();
-
-		}
-		if (gc.getInput().isKeyPressed(Input.KEY_Q)) {
-
-			this.p.changeX(-1,  map);
-			//degatPersonnage();
-
-		}
-		if (gc.getInput().isKeyPressed(Input.KEY_Z)) {
-
-			this.p.changeY(-1, map);
-			//degatPersonnage();
-
-		}
-		if (gc.getInput().isKeyPressed(Input.KEY_S)) {
-
-			this.p.changeY(1, map);
-			//degatPersonnage();
-
-		}
-
+		Controlers.mouvementsHero(gc, p, map);
 	}
 
 	public void deplacementMonstre(){
@@ -87,10 +65,10 @@ public abstract class Map_Globale extends BasicGameState {
 		Monstre res = null;
 		int x = rand.nextInt(map.getWidth() - 2) +1;
 		int y = rand.nextInt(map.getHeight() - 2) +1;
-		int fantome = map.getLayerIndex("Fantôme");
-		int obstacle = map.getLayerIndex("Obstacles");
+		int obstacles = map.getLayerIndex("Obstacles");
+		int frontiere = map.getLayerIndex("Frontières");
 		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur) < 3
-				&& map.getTileId( x, y, fantome) != 0 && map.getTileId(x,y,obstacle) == 1) { //tant que la case x,y n'est pas une case vide
+				&& map.getTileId( x, y, obstacles) != 0 && map.getTileId(x,y,frontiere) == 1) { //tant que la case x,y n'est pas une case vide
 			x = rand.nextInt(map.getWidth()-2)+1;
 			y = rand.nextInt(map.getHeight()-2)+1;
 		}
