@@ -92,6 +92,12 @@ public class GameTest {
         assertTrue(g.getLabyrinthe().getCase(1,5) == 2);
 
     }
+    
+    @Test 
+    public void dispoCase(){
+    	Game g = new Game();
+    	
+    }
 
 
 
