@@ -84,29 +84,9 @@ public abstract class Map_Globale extends BasicGameState {
 	}
 	
 	public void degatPersonnage() {
-		if(compteur > 60) {
-
-			int xM, yM, xH, yH;
-			xH = this.p.posX;
-			yH = this.p.posY;
-			boolean dessus, dessous, droite, gauche;
-			Monstre m;
-			for (int i = 0; i < monstres.size(); i++) {
-				m = monstres.get(i);
-				xM = m.posX;
-				yM = m.posY;
-				dessus = xM == xH && ((yH - yM) == -1);
-				dessous = xM == xH && ((yM - yH) == 1);
-				droite = ((xM-xH) == -1) && yM == yH;
-				gauche = ((xM-xH) == 1) && yM == yH;
-				if (dessus || dessous || droite || gauche) {
-					m.hp--;
-					p.hp--;
-				}
-				if (m.hp == 0) {
-					monstres.remove(m);
-				}
-			}
+		p.attaquer(compteur,monstres,map,p);
+		for(Monstre m : monstres){
+			m.attaquer(compteur,monstres,map,p);
 		}
 	}
 

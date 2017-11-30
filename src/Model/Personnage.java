@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
@@ -28,7 +30,9 @@ public abstract class Personnage extends BasicGameState {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	public abstract void attaquer(int compteur, List<Monstre> monstres, TiledMap map, Hero p);
+	
 	@Override
 	public int getID() {
 		// TODO Auto-generated method stub

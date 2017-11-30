@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -48,6 +50,35 @@ public class Hero extends Personnage{
 			&& map.getTileId( this.posX , this.posY + y, obstacle) == 0) {
 			this.posY += y;
 		}		
+	}
+	
+	public void attaquer(int compteur, List<Monstre> monstres, TiledMap map, Hero p){
+		if(compteur > 60) {
+
+			int xM, yM, xH, yH;
+			xH = this.posX;
+			yH = this.posY;
+			boolean dessus, dessous, droite, gauche, confondu, nonObjet;
+			Monstre m;
+			int obstacle = map.getLayerIndex("Obstacles");
+			for (int i = 0; i < monstres.size(); i++) {
+				m = monstres.get(i);
+				xM = m.posX;
+				yM = m.posY;
+				dessus = xM == xH && ((yH - yM) == -1);
+				dessous = xM == xH && ((yM - yH) == 1);
+				droite = ((xM-xH) == -1) && yM == yH;
+				gauche = ((xM-xH) == 1) && yM == yH;
+				confondu = (xM == xH) && (yM== yH);
+				nonObjet = map.getTileId(xM,yM,obstacle) == 0;
+				if ((dessus || dessous || droite || gauche || confondu) && nonObjet) {
+					m.hp--;
+				}
+				if (m.hp == 0) {
+					monstres.remove(m);
+				}
+			}
+		}
 	}
 
 
