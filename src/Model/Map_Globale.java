@@ -8,6 +8,8 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
+import Controlers.Controlers;
+
 import java.util.List;
 import java.util.Random;
 
@@ -30,31 +32,7 @@ public abstract class Map_Globale extends BasicGameState {
 	public abstract int getID();
 
 	public void deplacementHero(GameContainer gc, Hero personnage) {
-		if (gc.getInput().isKeyPressed(Input.KEY_D)) {
-
-			this.p.changeX(1, map);
-			//degatPersonnage();
-
-		}
-		if (gc.getInput().isKeyPressed(Input.KEY_Q)) {
-
-			this.p.changeX(-1,  map);
-			//degatPersonnage();
-
-		}
-		if (gc.getInput().isKeyPressed(Input.KEY_Z)) {
-
-			this.p.changeY(-1, map);
-			//degatPersonnage();
-
-		}
-		if (gc.getInput().isKeyPressed(Input.KEY_S)) {
-
-			this.p.changeY(1, map);
-			//degatPersonnage();
-
-		}
-
+		Controlers.mouvementsHero(gc, p, map);
 	}
 
 	public void deplacementMonstre(){
