@@ -80,6 +80,15 @@ public class Hero extends Personnage{
 			}
 		}
 	}
+	
+	public void takeDammage(int dps){
+		this.hp -= dps;
+		if(hp <= 0 ){
+			//mort
+		}else{
+			//maj les coeurs
+		}
+	}
 
 
 
