@@ -61,7 +61,7 @@ public class Fantome extends Monstre {
 			gauche = ((xM-xH) == 1) && yM == yH;
 			confondu = (xM == xH) && (yM== yH);
 			if (dessus || dessous || droite || gauche || confondu) {
-				p.hp--;
+				p.takeDammage(1);;
 			}
 		}
 	}

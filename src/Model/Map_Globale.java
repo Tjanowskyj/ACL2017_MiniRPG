@@ -1,17 +1,18 @@
 package Model;
 
+import java.util.List;
+import java.util.Random;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
 import Controlers.Controlers;
-
-import java.util.List;
-import java.util.Random;
+import View.Hud;
+import Main.Jeu;
 
 public abstract class Map_Globale extends BasicGameState {
 
@@ -22,7 +23,8 @@ public abstract class Map_Globale extends BasicGameState {
 	protected StateBasedGame sbg;
 	protected static List<Monstre> monstres;
 	private static int compteur = 0;
-
+	protected Hud hud;
+	
 	public abstract void init(GameContainer gc, StateBasedGame sbg) throws SlickException;
 
 	public abstract void render(GameContainer gc, StateBasedGame stg, Graphics g) throws SlickException;
@@ -33,6 +35,11 @@ public abstract class Map_Globale extends BasicGameState {
 
 	public void deplacementHero(GameContainer gc, Hero personnage) {
 		Controlers.mouvementsHero(gc, p, map);
+	}
+	
+	public void initHud(Hero p, GameContainer gc, StateBasedGame sbg) throws SlickException {
+		this.hud = new Hud(p);
+		this.hud.init(gc, sbg);
 	}
 
 	public void deplacementMonstre(){
@@ -93,5 +100,11 @@ public abstract class Map_Globale extends BasicGameState {
 	public void incrementCompteur(){
 		compteur++;
 	}
-
+	
+	public void gameOver(StateBasedGame sg) {
+		if(this.p.estMort()) {
+			sg.enterState(Jeu.GAMEOVER);
+		}
+	}
+	
 }

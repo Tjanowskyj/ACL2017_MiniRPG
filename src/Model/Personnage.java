@@ -38,4 +38,9 @@ public abstract class Personnage extends BasicGameState {
 		// TODO Auto-generated method stub
 		return -1;
 	}
+	
+	public int getHp() {
+		return hp;
+	}
+
 }

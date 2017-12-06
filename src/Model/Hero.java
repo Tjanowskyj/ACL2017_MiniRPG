@@ -12,9 +12,13 @@ import org.newdawn.slick.Image;
 public class Hero extends Personnage{
 	
 
+	
+	private boolean mort;
 
 	public Hero(int x, int y, int hp) {
-		super(x, y,hp); }
+		super(x, y,hp);
+		this.mort = false;
+	}
 
 
 	@Override
@@ -82,14 +86,15 @@ public class Hero extends Personnage{
 	}
 	
 	public void takeDammage(int dps){
-		this.hp -= dps;
+		if(this.hp >0) this.hp -= dps;
 		if(hp <= 0 ){
-			//mort
-		}else{
-			//maj les coeurs
+			this.mort = true;
 		}
 	}
 
+	public boolean estMort() {
+		return this.mort;
+	}
 
 
 }
