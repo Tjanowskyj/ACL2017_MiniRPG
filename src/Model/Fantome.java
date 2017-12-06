@@ -1,13 +1,13 @@
 package Model;
 
-import java.util.List;
-
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
+
+import java.util.List;
 
 public class Fantome extends Monstre {
 
@@ -56,7 +56,7 @@ public class Fantome extends Monstre {
 			xH = p.posX;
 			yH = p.posY;
 			dessus = xM == xH && ((yH - yM) == -1);
-			dessous = xM == xH && ((yM - yH) == 1);
+			dessous = xM == xH && ((yH - yM) == 1);
 			droite = ((xM-xH) == -1) && yM == yH;
 			gauche = ((xM-xH) == 1) && yM == yH;
 			confondu = (xM == xH) && (yM== yH);

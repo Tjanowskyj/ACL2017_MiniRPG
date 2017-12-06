@@ -40,18 +40,6 @@ public class Map1 extends Map_Globale {
 	}
 
 	@Override
-	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException {
-		this.incrementCompteur();
-		this.p.update(gc, sbg, arg0);
-		this.hud.update(gc, sbg, arg0);
-		this.sbg= sbg;
-		this.degatPersonnage();
-		this.gameOver(sbg);
-		this.deplacementHero(gc, p);
-		this.deplacementMonstre();
-	}
-
-	@Override
 	public int getID() {
 		// TODO Auto-generated method stub
 		return Jeu.MAP1;

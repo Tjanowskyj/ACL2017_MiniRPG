@@ -1,8 +1,8 @@
 package Model;
 
-import java.util.List;
-import java.util.Random;
-
+import Controlers.Controlers;
+import Main.Jeu;
+import View.Hud;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -10,9 +10,8 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
-import Controlers.Controlers;
-import View.Hud;
-import Main.Jeu;
+import java.util.List;
+import java.util.Random;
 
 public abstract class Map_Globale extends BasicGameState {
 
@@ -29,7 +28,17 @@ public abstract class Map_Globale extends BasicGameState {
 
 	public abstract void render(GameContainer gc, StateBasedGame stg, Graphics g) throws SlickException;
 
-	public abstract void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException;
+	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
+		this.incrementCompteur();
+		this.p.update(gc, sbg, arg0);
+		this.hud.update(gc, sbg, arg0);
+		this.sbg= sbg;
+		this.degatPersonnage();
+		this.gameOver(sbg);
+		this.deplacementHero(gc, p);
+		this.deplacementMonstre();
+	}
+
 
 	public abstract int getID();
 
