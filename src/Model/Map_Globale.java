@@ -55,22 +55,7 @@ public abstract class Map_Globale extends BasicGameState {
 		if(compteur > 60){
 			compteur = 0;
 			for(Monstre m : monstres){
-				Random rand = new Random();
-				int nombreAleatoire = rand.nextInt(4 - 1 + 1) + 1;
-				switch (nombreAleatoire){
-					case 1:
-						m.changeX(1,map);
-						break;
-					case 2:
-						m.changeX(-1,map);
-						break;
-					case 3:
-						m.changeY(1,map);
-						break;
-					case 4:
-						m.changeY(-1,map);
-						break;
-				}
+				m.deplacement(map);
 			}
 			//degatPersonnage();
 		}
