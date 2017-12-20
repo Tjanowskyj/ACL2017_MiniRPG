@@ -36,7 +36,7 @@ public class Map1 extends Map_Globale {
 		this.map.render(0,0);
 		p.render(gc, sbg, g);
 		this.hud.render(gc, sbg, g);
-		renderMonstre(gc,sbg,g);
+		this.renderMonstre(gc,sbg,g);
 	}
 
 	@Override
@@ -44,19 +44,4 @@ public class Map1 extends Map_Globale {
 		// TODO Auto-generated method stub
 		return Jeu.MAP1;
 	}
-
-	private void initMonstre(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		for(Monstre m : monstres){
-			m.init(gc,sbg);
-		}
-	}
-
-	private void renderMonstre(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		for(Monstre m : monstres){
-			m.render(gc,sbg,g);
-		}
-	}
-
-
-
 }
