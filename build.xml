@@ -3,20 +3,43 @@
     <property name="build.dir" value="build"/>
     <property name="class.dir" value="${build.dir}/classes"/>
     <property name="jar.dir" value="${build.dir}/jar"/>
-    <property name="main-class" value="Main"/>
+    <property name="main-class" value="Main/Jeu"/>
     <target name="compile">
         <mkdir dir="${class.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${class.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${class.dir}">
+            <classpath refid="external.classpath"/>
+        </javac>
     </target>
     <target name="jar" depends="compile">
+        <copy todir="${jar.dir}">
+            <fileset dir="${basedir}/lib/natives/natives-mac"/>
+        </copy>
         <mkdir dir="${jar.dir}"/>
         <jar destfile="${jar.dir}/${ant.project.name}.jar"
              basedir="${class.dir}">
+            <zipgroupfileset dir="${basedir}/lib" includes="*.jar"/>
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
             </manifest>
-        </jar> </target>
-    <target name="run" depends="jar">
-        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+        </jar>
     </target>
+    <target name="run" depends="jar">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
+            <jvmarg value="-Djava.library.path=./build/jar/"/>
+        </java>
+    </target>
+
+    <path id="external.classpath">
+        <pathelement location="${basedir}/lib/ibxm.jar"/>
+        <pathelement location="${basedir}/lib/jinput.jar"/>
+        <pathelement location="${basedir}/lib/jnlp.jar"/>
+        <pathelement location="${basedir}/lib/jogg-0.0.7.jar"/>
+        <pathelement location="${basedir}/lib/jorbis-0.0.15.jar"/>
+        <pathelement location="${basedir}/lib/lwjgl.jar"/>
+        <pathelement location="${basedir}/lib/lwjgl_util.jar"/>
+        <pathelement location="${basedir}/lib/lwjgl_util_applet.jar"/>
+        <pathelement location="${basedir}/lib/slick.jar"/>
+        <pathelement location="${basedir}/lib/tinylinepp.jar"/>
+    </path>
+
 </project>
