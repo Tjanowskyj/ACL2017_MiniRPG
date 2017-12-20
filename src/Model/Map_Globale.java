@@ -35,14 +35,14 @@ public abstract class Map_Globale extends BasicGameState {
 		this.sbg= sbg;
 		this.degatPersonnage();
 		this.gameOver(sbg);
-		this.deplacementHero(gc, p);
+		this.deplacementHero(gc);
 		this.deplacementMonstre();
 	}
 
 
 	public abstract int getID();
 
-	public void deplacementHero(GameContainer gc, Hero personnage) {
+	public void deplacementHero(GameContainer gc) {
 		Controlers.mouvementsHero(gc, p, map);
 	}
 	
