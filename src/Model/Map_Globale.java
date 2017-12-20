@@ -101,4 +101,16 @@ public abstract class Map_Globale extends BasicGameState {
 		}
 	}
 	
+
+	public void initMonstre(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		for(Monstre m : monstres){
+			m.init(gc,sbg);
+		}
+	}
+
+	public void renderMonstre(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		for(Monstre m : monstres){
+			m.render(gc,sbg,g);
+		}
+	}
 }
