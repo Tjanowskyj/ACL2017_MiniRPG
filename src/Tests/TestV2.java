@@ -58,7 +58,7 @@ public class TestV2 extends TestCase{
         int xInit = 2;
         int yInit = 1;
         f.deplacement(t);
-        assertFalse("Les coordonnées du monstre devraient être modifiées.",((xInit == f.getX()) && (yInit == f.getY())));
+        assertFalse("Les coordonnées du monstre devraient être modifiées.",((xInit == f.getPosX()) && (yInit == f.getPosY())));
     }
 
 

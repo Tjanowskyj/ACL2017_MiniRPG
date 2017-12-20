@@ -53,15 +53,15 @@ public class Fantome extends Monstre {
 			xM = this.posX;
 			yM = this.posY;
 			boolean dessus, dessous, droite, gauche, confondu;
-			xH = p.posX;
-			yH = p.posY;
+			xH = p.getPosX();
+			yH = p.getPosY();
 			dessus = xM == xH && ((yH - yM) == -1);
 			dessous = xM == xH && ((yH - yM) == 1);
 			droite = ((xM-xH) == -1) && yM == yH;
 			gauche = ((xM-xH) == 1) && yM == yH;
 			confondu = (xM == xH) && (yM== yH);
 			if (dessus || dessous || droite || gauche || confondu) {
-				p.takeDammage(1);;
+				p.takeDammage(1);
 			}
 		}
 	}

@@ -10,14 +10,11 @@ import org.newdawn.slick.tiled.TiledMap;
 import java.util.List;
 
 public class Hero extends Personnage{
-	
 
-	
 	private boolean mort;
 
 	public Hero(int x, int y, int hp) {
 		super(x, y,hp);
-		this.mort = false;
 	}
 
 
@@ -67,8 +64,8 @@ public class Hero extends Personnage{
 			int obstacle = map.getLayerIndex("Obstacles");
 			for (int i = 0; i < monstres.size(); i++) {
 				m = monstres.get(i);
-				xM = m.posX;
-				yM = m.posY;
+				xM = m.getPosX();
+				yM = m.getPosY();
 				dessus = xM == xH && ((yH - yM) == -1);
 				dessous = xM == xH && ((yH - yM) == 1);
 				droite = ((xM-xH) == -1) && yM == yH;
@@ -76,25 +73,16 @@ public class Hero extends Personnage{
 				confondu = (xM == xH) && (yM== yH);
 				nonObjet = map.getTileId(xM,yM,obstacle) == 0;
 				if ((dessus || dessous || droite || gauche || confondu) && nonObjet) {
-					m.hp--;
+					m.takeDammage(1);
 				}
-				if (m.hp == 0) {
+				if (m.getHp() == 0) {
 					monstres.remove(m);
 				}
 			}
 		}
 	}
-	
-	public void takeDammage(int dps){
-		if(this.hp >0) this.hp -= dps;
-		if(hp <= 0 ){
-			this.mort = true;
-		}
-	}
 
-	public boolean estMort() {
-		return this.mort;
-	}
+
 
 
 }

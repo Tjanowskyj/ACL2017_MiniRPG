@@ -14,11 +14,13 @@ public abstract class Personnage extends BasicGameState {
 	protected int posY;
 	protected int hp;
 	protected Image image;
+	protected boolean mort;
 	
 	public Personnage(int x, int y, int hp){
 		this.posX = x;
 		this.hp = hp;
 		this.posY = y;
+		this.mort = false;
 	}
 	
 	public abstract void changeX(int x, TiledMap map);
@@ -43,4 +45,22 @@ public abstract class Personnage extends BasicGameState {
 		return hp;
 	}
 
+	public void takeDammage(int dps){
+		if(this.hp >0) this.hp -= dps;
+		if(hp <= 0 ){
+			this.mort = true;
+		}
+	}
+
+	public boolean estMort() {
+		return this.mort;
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
 }

@@ -15,7 +15,6 @@ public class GameOver extends BasicGameState {
 
 	
 	private Image fond;
-	private StateBasedGame sbg;
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
