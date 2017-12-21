@@ -6,7 +6,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
-import Model.Map1;
+import Model.*;
 import View.GameOver;
 
 public class Jeu extends StateBasedGame {
@@ -14,6 +14,7 @@ public class Jeu extends StateBasedGame {
 	
 	public static final String NAME = "MiniRPG"; //nom du jeu
 	public static final int MAP1 = 1; //Identifiant de la carte 1
+	public static final int MAP2 = 2; //Identifiant de la carte 1
 	public static final int GAMEOVER = 66; //Identifiant de l'état Game Over
 	public static final int FPS = 60;
 	public static AppGameContainer agc;
@@ -22,6 +23,7 @@ public class Jeu extends StateBasedGame {
 	public Jeu(String name) {
 		super(name);
 		this.addState(new Map1());
+		this.addState(new Map2());
 		this.addState(new GameOver());
 	}
 
