@@ -1,5 +1,6 @@
 package Model;
 
+import org.lwjgl.Sys;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -53,7 +54,7 @@ public class Hero extends Personnage{
 		}		
 	}
 	
-	public void attaquer(int compteur, List<Monstre> monstres, TiledMap map, Hero p){
+	public void attaquer(int compteur, List<Monstre> monstres, TiledMap map){
 		if(compteur > 60) {
 
 			int xM, yM, xH, yH;
@@ -66,14 +67,15 @@ public class Hero extends Personnage{
 				m = monstres.get(i);
 				xM = m.getPosX();
 				yM = m.getPosY();
-				dessus = xM == xH && ((yH - yM) == -1);
-				dessous = xM == xH && ((yH - yM) == 1);
-				droite = ((xM-xH) == -1) && yM == yH;
-				gauche = ((xM-xH) == 1) && yM == yH;
+				dessous = xM == xH && (((yH - yM) == -1) || ((yH - yM) == -2)) && this.getDirection().equals("B");
+				dessus = xM == xH && (((yH - yM) == 1) || ((yH - yM) == 2)) && this.getDirection().equals("H");
+				gauche = (((xM-xH) == -1) || (xM-xH) == -2 ) && yM == yH && this.getDirection().equals("G");
+				droite = (((xM-xH) == 1) || (xM-xH) == 2) && yM == yH && this.getDirection().equals("D");
 				confondu = (xM == xH) && (yM== yH);
 				nonObjet = map.getTileId(xM,yM,obstacle) == 0;
 				if ((dessus || dessous || droite || gauche || confondu) && nonObjet) {
 					m.takeDammage(1);
+					System.out.println(m.getHp());
 				}
 				if (m.getHp() == 0) {
 					monstres.remove(m);

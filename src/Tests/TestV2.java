@@ -26,7 +26,7 @@ public class TestV2 extends TestCase{
         Fantome f = new Fantome(2,1,3);
         List<Monstre> l = new ArrayList<Monstre>();
         l.add(f);
-        h.attaquer(61,l,t,h);
+        h.attaquer(61,l,t);
         assertEquals("Les hps du monstres devraient être plus bas.",2,f.getHp());
     }
 
@@ -42,7 +42,7 @@ public class TestV2 extends TestCase{
         Fantome f = new Fantome(2,1,3);
         List<Monstre> l = new ArrayList<Monstre>();
         l.add(f);
-        f.attaquer(61,l,t,h);
+        f.attaquer(61,h);
         assertEquals("Les hps du Joueur devraient être plus bas.",4,h.getHp());
     }
 
@@ -74,7 +74,7 @@ public class TestV2 extends TestCase{
         Fantome f = new Fantome(4,3,3);
         List<Monstre> l = new ArrayList<Monstre>();
         l.add(f);
-        h.attaquer(61,l,t,h);
+        h.attaquer(61,l,t);
         assertEquals("Les hps du monstres ne devraient pas être diminuées.",3,f.getHp());
     }
 
@@ -89,7 +89,7 @@ public class TestV2 extends TestCase{
         Fantome f = new Fantome(4,3,3);
         List<Monstre> l = new ArrayList<Monstre>();
         l.add(f);
-        f.attaquer(61,l,t,h);
+        f.attaquer(61,h);
         assertEquals("Les hps du héro devraient être plus bas.",4,h.getHp());
     }
 
@@ -104,8 +104,8 @@ public class TestV2 extends TestCase{
         Fantome f = new Fantome(4,2,3);
         List<Monstre> l = new ArrayList<Monstre>();
         l.add(f);
-        h.attaquer(61,l,t,h);
-        f.attaquer(61,l,t,h);
+        h.attaquer(61,l,t);
+        f.attaquer(61,h);
         assertEquals("Les hps du monstres devraient être plus bas.",2,f.getHp());
         assertEquals("Les hps du héro devraient être plus bas",4,h.getHp());
     }
@@ -118,7 +118,7 @@ public class TestV2 extends TestCase{
         Fantome f = new Fantome(4,2,1);
         List<Monstre> l = new ArrayList<Monstre>();
         l.add(f);
-        h.attaquer(61,l,t,h);
+        h.attaquer(61,l,t);
         assertTrue("Le monstre ne devrait plus être dans la liste (il a perdu tous ses hps)",l.isEmpty());
     }
 }

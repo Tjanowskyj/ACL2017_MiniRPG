@@ -40,7 +40,7 @@ public abstract class Map_Globale extends BasicGameState {
 		//this.p.update(gc, sbg, arg0);
 		this.hud.update(gc, sbg, arg0);
 		this.sbg= sbg;
-		this.degatPersonnage();
+		this.degatPersonnage(gc);
 		this.gameOver(sbg);
 		this.deplacementHero(gc);
 		this.deplacementMonstre();
@@ -82,7 +82,7 @@ public abstract class Map_Globale extends BasicGameState {
 		}
 		switch(i) {
 		case 0:
-			res = new Fantome(x,y,2);
+			res = new Fantome(x,y,1);
 			res.setDirection("B");
 			break;
 		default :	
@@ -92,10 +92,10 @@ public abstract class Map_Globale extends BasicGameState {
 		return res;
 	}
 	
-	public void degatPersonnage() {
-		p.attaquer(compteur,monstres,map,p);
+	public void degatPersonnage(GameContainer gc) {
+		Controlers.attaquerHero(gc,p,map,monstres,compteur);
 		for(Monstre m : monstres){
-			m.attaquer(compteur,monstres,map,p);
+			m.attaquer(compteur,p);
 		}
 	}
 

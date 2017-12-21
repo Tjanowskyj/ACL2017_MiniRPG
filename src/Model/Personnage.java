@@ -34,8 +34,7 @@ public abstract class Personnage extends BasicGameState {
 		// TODO Auto-generated method stub
 
 	}
-	
-	public abstract void attaquer(int compteur, List<Monstre> monstres, TiledMap map, Hero p);
+
 	
 	@Override
 	public int getID() {
