@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="32" height="25" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="Atlas.tsx"/>
- <layer name="Sol" width="20" height="20">
+ <layer name="Sol" width="32" height="25">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA1NkZmBQHMWjeBSP4lE8iknEAPE/f8VABgAA
+   H4sIAAAAAAAAA+3DMQkAAAwDsMKU1L/JutiVQHpJVVVVHw4/uB5mgAwAAA==
   </data>
  </layer>
- <layer name="Décorations" width="20" height="20">
+ <layer name="Décorations" width="32" height="25">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGDzgDDPperYz4ZZ7Q4Z55AJi3b4Nj3uRAT3dPgqIB7uIjD9qgn80tpOcfIcPDHTatR2EeQc9jCkNc/QwHqgwBwBCG86TQAYAAA==
+   H4sIAAAAAAAAA7WWa07DMBCEnfgavNpeg9L+gWvQP3ALKO9bQAuU3qMtcA/gGoCYqBlps1k7jlQsfbJS2Z3s7njjjneusyFuwCl4KZkn7Nlzm9HugZnQPgTv5e+xfcNE/X6DtoxdahOndPg8wrzr2uVBDv4mY58b2peYr8C1r+69wDxw6XkoWOTOLcEqr+uHYn/E/ASelf4U87Fb5yFV/wO6n+DL0D8Bd4b+AvMSrJR+wdit85Cqn4EceF/Xt94hNLh3UnqgyQddgfbTKzgKeMCqPfdTb5Dgg66ve1kO+Q7UL9ZYted/DEXcTT5g7KGzUIyZr/ceq/bUH4m4pQ++M+d+wG9W1Y+dRUtf1r+jasHzx7gLH0zLdVvw9jbYycP56BvxSH3WS+6RteD5s/y/D90+OIjo60EfvvlqD6j0DlEL6f+p0j+D7jkYC30rHqmtn3sBz0joPR3/PXQfwETph3Kg86H36LoTek/HL5G9LNaXOKz+rOtOUntvUx674h2s/mzVvSC198a0NZmv9+cQlvc0sW9/m3cMeWATMaestzxA/7e5gzhjXS+gL4flAfq/zR3EOmex8xHLO/3f5g7CUdz5bv36Wx/LvZV3Qv+3vYMU6F4vkeusvBP6P+Uc/Ad/0QPKhoAMAAA=
   </data>
  </layer>
- <layer name="Obstacles" width="20" height="20">
+ <layer name="Obstacles" width="32" height="25">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGNlgHjMDw3wgXsBMHbX7gHL7gfgAEeYRo/YeUO4+ED8gwjxi1P4Dyv0HybMQNo8UtQMFJjAyMExkpJ55G4BmbaSieReAZl2konmDCUwi0V+E8s8mRuLVgsBoXht4AAAB1mejQAYAAA==
+   H4sIAAAAAAAAA8VV7Q2CMBAtsoYKg/iBW/jDD5xEGEBXEAbQCfQHe+gmYLxGXmyaCi2W+pILCRw87t31XcAYC5kZSq9b/lPx3pwiMuS3iS1FTBEwcx1sYE+RMPc6pP77eqLI2EcHV8hrfugOHUQsB/3xFzU/dIcOriHPX6jIOdC5ORqeOV3I8xcpcs7EffnCb9ojOV+ev9jsc1bAa4cOSX2Pe1blqT3LNnjvoUNW3xuSTiOKcY9nAEDvRQ+cEO+UYuaAH70XPXBFvGuKjQb/Lz7Ba0bvXe6CVPAf9N7lLoD/8ppRr8tdAP/lNcvzp9oFIkz9sCmf1yzPX9sugB/qekOTf3L8Y/5E9DF/C7/7f9iYv10Lf9rwHDpcKeemyLOxj/MGfuhwp5yHIq9tnnRQaPSnpJyqQx9N8AIcRbq0gAwAAA==
   </data>
  </layer>
- <layer name="Frontières" width="20" height="20">
+ <layer name="Frontières" width="32" height="25">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA1vMzMBwiEp4IRAvBmJqgVHzRs0bNW/UvFHzqGteE5UwyDwA9LPJg0AGAAA=
+   H4sIAAAAAAAAA8XWsQ0CMQyFYZN0wBCugSE8iivmcMEgQQLmxEgg+U53orjij/SUlyjK16SIisiui7SN6Zlb5pp5fvPq/+824cY9fYf9gP0B+wr7BvsO+wH7A/YV9g32HfYD9gfsK+wb7DvsB+wP2FfYN9h32I+c903kkDm2aV/aq72OtTPzXte/93fKfs5c2rQv7dX+KP/8tTPzXtcf/w0qtQCpgAwAAA==
   </data>
  </layer>
 </map>

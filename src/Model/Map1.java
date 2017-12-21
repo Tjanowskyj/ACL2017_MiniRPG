@@ -29,7 +29,14 @@ public class Map1 extends Map_Globale {
 		this.p.init(gc, sbg);
 		this.initHud(p, gc, sbg);
 	}
-
+	
+	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
+		super.update(gc, sbg, arg0);
+		if(this.p.getPosX() == 21 && this.p.getPosY() == 1){
+			this.sbg.enterState(Jeu.MAP2);
+			this.p.setPosX(22);this.p.setPosY(22);
+		}
+	}
 	@Override
 	public int getID() {
 		// TODO Auto-generated method stub
