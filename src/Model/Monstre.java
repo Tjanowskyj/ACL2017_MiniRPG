@@ -16,15 +16,19 @@ public abstract class Monstre extends Personnage {
         switch (nombreAleatoire){
             case 1:
                 this.changeX(1,map);
+                this.setDirection("D");
                 break;
             case 2:
                 this.changeX(-1,map);
+                this.setDirection("G");
                 break;
             case 3:
                 this.changeY(1,map);
+                this.setDirection("B");
                 break;
             case 4:
                 this.changeY(-1,map);
+                this.setDirection("H");
                 break;
         }
     }

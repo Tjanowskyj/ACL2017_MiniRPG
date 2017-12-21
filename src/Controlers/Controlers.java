@@ -13,23 +13,27 @@ public class Controlers {
 		if (gc.getInput().isKeyPressed(Input.KEY_D)) {
 
 			p.changeX(1, map);
+			p.setDirection("D");
 			return true;
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_Q) || gc.getInput().isKeyPressed(Input.KEY_A)) { //QWERTY
 
 			p.changeX(-1,  map);
+			p.setDirection("G");
 			return true;
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_Z) || gc.getInput().isKeyPressed(Input.KEY_W)) { //QWERTY
 
 			p.changeY(-1, map);
+			p.setDirection("H");
 			return true;
 
 		}
 		if (gc.getInput().isKeyPressed(Input.KEY_S)) {
 
 			p.changeY(1, map);
+			p.setDirection("B");
 			return true;
 
 		}
