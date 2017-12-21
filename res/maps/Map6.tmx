@@ -4,22 +4,22 @@
  <tileset firstgid="1025" source="Atlas2.tsx"/>
  <layer name="Sol" width="32" height="23" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3DMQkAAAwDsMKU1L/JutiVQHpJVVXVlwMenjTPgAsAAA==
+   H4sIAAAAAAAAA9VVWw7DMAircv1cJbtIld6p/YmEPPMKm6Z98JMABhuSsx3H+afWweTdeOz1BQxp87EL/CS+FpfFjvoj5kXuM5xMkqPiv+6zuqy+qlou/ExPkrdP1LCj96o7Ow8sv8e9lz+Cz+ZMm8koB9EaRnufQ7avVQ40Hw2b3UXwcae1GnHvWcwOvjYz2rtWnVGGjzUjrqxP7squxt3wwbNpcGG9tzv4WW4XF9o+spjh4Ge1ZPto5ZJ64hywmOHwPAm+xSPOW2/2/8PyexpEtMcerf4iOx39Q6z/J8K3ZdG33fLx+K5g/8JuGRN1X4ALAAA=
   </data>
  </layer>
- <layer name="Décorations" width="32" height="23" visible="0">
+ <layer name="Décorations" width="32" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA8WWUQqAIAyGBU8SddKCnjtDQc+doaBzFYhQstnvpjn4H6rNz+nSGVPfZuu03JoC/c3fAmmsA+Of/Bq2W6cjE7+NjEN9GwGujwvj/XNj3+84f8rWguuO8M+ID1pDmrjeOg0C1ld+SP6a+k+ttdz8FHvWpZYvyTuVL609jsPNDc0f3c/UmC++zydUab6El5NPjSWdh4ZPnfnSdWkIf+n/l2tPYv2PtA+i5sbdibH+h+uD0LMB8avd/9S0C0KdkQGACwAA
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
   </data>
  </layer>
  <layer name="Obstacles" width="32" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGBpgHjMDw3wgXgDEv1gZGH4TwH9YybNnAjMqhoF9QPZ+ID7AjFvvJEbs4mpAPb1AuT4c8shgAzMqhoF7QPZ9IH6Ax/5NOMx/A8RrgXLrGCFscsA/oL3/QXazkKf/NQNqHA4EICYOaQmIiUNcIB0YdxlAnElEGsIFKInDdqC9HUDcSYH9lIDlQHtXAPFKNPsHe5qiRrzhA4TSFK3jjVCawhVvwxXQOr4JgcGaT2kFqJ3/q1mx4z042hP0qlPm4LCfmDoFW3uGGLXIGGS/HBY3EFOnYGvPEKMWGYPstyOzTTeYAQA1Dq73gAsAAA==
+   H4sIAAAAAAAAA+2WYQqDMAyFhd5sHsWTbDuJ7iS6i82xFsMj6Xstwv74oGBHmo+8mM5h+L+W9Fuv1J/jvp99puP5UdkzfolvWZM5P0M+3DP+N/62r62yxnScW3L8O59fc0y0R21OfBRbNAM/qo15z4S9KHkiPvKY94w5BZyIjzzmvafV9Ne+B6PARx7z3/PWq6P8xvgoxX8vh+ebwsd6Ff/V+0fh1+qNeuHxvViFb+tVZ8Hjs/4XDt4d6JcyCz39j2RrVmehp//sXvJytfh/Rv+ZHzX+Nf9+Ldf81/no15nzb79LFH7Pf6+q6LugVR+F3cwwgAsAAA==
   </data>
  </layer>
- <layer name="Frontières" width="32" height="23" visible="0">
+ <layer name="Frontières" width="32" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA1vEzMCwCAmr0RmD7BwoMGo/A8OhAba/dYDtXzrA9h8dYPubRnj6H7V/1P5R+0ftH7V/5No/kO1fAIHY2IGACwAA
+   H4sIAAAAAAAAA1vEzMCwCIqdgPgQHbEz1N6BAgtH7QfHw0Da3zqA9oPsXjqA9oPsPjqA9oPsbhrh6X/U/lH7R+0ftX/U/pFrPwwnQetDeuFkIAYATsC3+YALAAA=
   </data>
  </layer>
  <layer name="Nord" width="32" height="23">
@@ -34,7 +34,7 @@
  </layer>
  <layer name="Est" width="32" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+   H4sIAAAAAAAAA2NgGAWjYOSBFuaBtX/JANt/ZIDtHwWjYBSMglEwCkYyAADl/9e9gAsAAA==
   </data>
  </layer>
  <layer name="Ouest" width="32" height="23">
@@ -44,17 +44,17 @@
  </layer>
  <layer name="Potions" width="32" height="23" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAVDHSgyD7QLRsEoGAWjYBSMguELRuvZUUBtAADl76e7gAsAAA==
+   H4sIAAAAAAAAA2NgGPrgFNNAu2AUjIJRMApGwSgYBaNgFIwC4gAACTXKbYALAAA=
   </data>
  </layer>
  <layer name="Clef" width="32" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3OMQ0AAAgDsCUowb9JXLCnVdCEbzvtAQAALQef7yf4gAsAAA==
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
   </data>
  </layer>
  <layer name="Pièges" width="32" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGBmAkXGgXTAKhjoYTmloOPllFIyCUTAKBjMYLW9HATYAADv+G9iACwAA
+   H4sIAAAAAAAAA2NgGAWjYHABRsaBdsEoGAWjYBSMAlLBaNlNORgNw5EDAEm1JhWACwAA
   </data>
  </layer>
 </map>

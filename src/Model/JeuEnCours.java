@@ -35,11 +35,12 @@ public class JeuEnCours extends BasicGameState{
 		this.p = new Hero(xDepart,yDepart,3);
 		this.p.init(gc, sbg);
 		monde = new Map[20];
-		monde[0] = new Map("res/maps/Map1.tmx",1,2,-1,-1);
-		monde[1] = new Map("res/maps/Map2.tmx",-1,0,3,-1);
-		monde[2] = new Map("res/maps/Map3.tmx",0,-1,-1,-1);
-		monde[3] = new Map("res/maps/Map4.tmx",-1,-1,-1,1);
-		monde[4] = new Map("res/maps/Map5.tmx",0,-1,-1,-1);
+		monde[0] = new Map("res/maps/Map1.tmx",1,2,-1,-1);//start
+		monde[1] = new Map("res/maps/Map2.tmx",-1,0,5,-1);//dessus start
+		monde[2] = new Map("res/maps/Map3.tmx",0,-1,-1,-1);//fin
+		monde[3] = new Map("res/maps/Map4.tmx",-1,-1,-1,5);//clef
+		monde[4] = new Map("res/maps/Map5.tmx",0,-1,-1,-1);//fin ouverte
+		monde[5] = new Map("res/maps/Map6.tmx",-1,-1,3,1);//labyrinthe
 		hud = new Hud(p);
 		hud.init(gc, sbg);
 		HashMap<Integer, Integer> listeMonstres = new HashMap<Integer,Integer>();
