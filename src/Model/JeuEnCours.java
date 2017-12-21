@@ -161,8 +161,4 @@ public class JeuEnCours extends BasicGameState{
 			m.attaquer(compteur,p);
 		}
 	}
-	
-	
-	
-
 }

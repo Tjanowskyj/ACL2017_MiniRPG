@@ -31,7 +31,6 @@ public class Hero extends Personnage{
 
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
-		this.image = new Image("res/sprites/herov1.png");
 		SpriteSheet g = new SpriteSheet("res/sprites/heros/gauche.png",
 				32, 32);
 		SpriteSheet d = new SpriteSheet("res/sprites/heros/droite.png",
