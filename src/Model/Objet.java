@@ -10,7 +10,7 @@ public abstract class Objet extends BasicGameState{
 	protected boolean active;
 	
 	
-	public abstract void effetObjet(Personnage p);
+	public abstract void effetObjet(Hero p);
 	
 	@Override
 	public int getID() {
