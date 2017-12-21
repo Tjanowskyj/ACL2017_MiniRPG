@@ -46,7 +46,7 @@ public abstract class Map_Globale extends BasicGameState {
 		this.degatPersonnage(gc);
 		this.gameOver(sbg);
 		this.deplacementHero(gc);
-		//this.deplacementMonstre();
+		this.deplacementMonstre();
 		if(compteur > 60){
 			compteur = 0;
 		}
