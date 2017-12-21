@@ -14,6 +14,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class Hero extends Personnage{
 
 	private boolean mort;
+	private boolean key;
 	private static Animation haut;
 	private static Animation bas;
 	private static Animation gauche;
@@ -23,6 +24,7 @@ public class Hero extends Personnage{
 
 	public Hero(int x, int y, int hp) {
 		super(x, y,hp);
+		key = false;
 	}
 
 
@@ -124,6 +126,8 @@ public class Hero extends Personnage{
 	}
 
 
-
+	public void getKey(){
+		this.key = true;
+	}
 
 }

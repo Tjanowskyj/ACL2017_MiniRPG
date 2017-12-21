@@ -6,40 +6,39 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Potion extends Objet{
-
-	public Potion(int x, int y){
+public class Piege extends Objet{
+	
+	public Piege(int x, int y){
 		this.posX = x;
 		this.posY = y;
 		this.active = true;
 	}
-
+	
 	@Override
-	public void init(GameContainer gc, StateBasedGame sbg)
+	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		this.image = new Image("res/sprites/Potion.png");
+		this.image = new Image("res/sprites/Piege.png");
 	}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics arg2)
+	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2)
 			throws SlickException {
 		// TODO Auto-generated method stub
 		this.image.draw(this.posX * 32, this.posY * 32);
 	}
 
 	@Override
-	public void update(GameContainer gc, StateBasedGame sbg, int arg2)
+	public void update(GameContainer arg0, StateBasedGame arg1, int arg2)
 			throws SlickException {
 		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void effetObjet(Hero p) {
 		// TODO Auto-generated method stub
-		p.heal();
+		p.takeDammage(1);
 	}
-
-
 
 }
