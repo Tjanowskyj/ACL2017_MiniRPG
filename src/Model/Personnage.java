@@ -15,12 +15,14 @@ public abstract class Personnage extends BasicGameState {
 	protected int hp;
 	protected Image image;
 	protected boolean mort;
+	protected String direction;
 	
 	public Personnage(int x, int y, int hp){
 		this.posX = x;
 		this.hp = hp;
 		this.posY = y;
 		this.mort = false;
+		this.direction = "B";
 	}
 	
 	public abstract void changeX(int x, TiledMap map);
@@ -62,5 +64,13 @@ public abstract class Personnage extends BasicGameState {
 
 	public int getPosY() {
 		return posY;
+	}
+
+	public String getDirection() {
+		return direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
 	}
 }
