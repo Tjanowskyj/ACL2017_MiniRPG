@@ -83,6 +83,7 @@ public abstract class Map_Globale extends BasicGameState {
 		switch(i) {
 		case 0:
 			res = new Fantome(x,y,2);
+			res.setDirection("B");
 			break;
 		default :	
 			break;
