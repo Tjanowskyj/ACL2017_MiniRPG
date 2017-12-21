@@ -13,14 +13,20 @@ import java.util.ArrayList;
 public class Map1 extends Map {
 	
 	
-	public Map1(String tiledMap) throws SlickException {
-		super(tiledMap);
+	
+
+	public Map1(String tiledMap, int nord, int sud, int est, int ouest)
+			throws SlickException {
+		super(tiledMap, nord, sud, est, ouest);
+		// TODO Auto-generated constructor stub
 	}
 
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+
 		super.init(gc,sbg);
 		this.sbg = sbg;
 		this.map = new TiledMap("res/maps/Map1.tmx");
+
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{

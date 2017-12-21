@@ -6,11 +6,9 @@ import org.newdawn.slick.state.BasicGameState;
 public abstract class Objet extends BasicGameState{
 	protected int posX;
 	protected int posY;
-	protected Image image; 
-	protected boolean active;
+	protected Image image; 	
 	
-	
-	public abstract void effetObjet(Personnage p);
+	public abstract void effetObjet(Hero p);
 	
 	@Override
 	public int getID() {

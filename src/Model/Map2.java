@@ -11,8 +11,12 @@ import Main.Jeu;
 
 public class Map2 extends Map {
 
-	public Map2(String tiledMap) throws SlickException {
-		super(tiledMap);
+	
+
+	public Map2(String tiledMap, int nord, int sud, int est, int ouest)
+			throws SlickException {
+		super(tiledMap, nord, sud, est, ouest);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -20,20 +24,18 @@ public class Map2 extends Map {
 		super.init(gc, sbg);
 		this.sbg = sbg;
 		this.map = new TiledMap("res/maps/Map2.tmx");
-		
-
 		initMonstre(gc,sbg);
-		//this.p.init(gc, sbg);
-		//this.initHud(p, gc, sbg);
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
 		super.update(gc, sbg, arg0);
+
 		/*
 		if(this.p.getPosX() == 22 && this.p.getPosY() == 23){
 			this.sbg.enterState(Jeu.MAP1);
 			this.p.setPosX(21);this.p.setPosY(2);
 		}*/
+
 	}
 
 

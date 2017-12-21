@@ -24,6 +24,10 @@ public class JeuEnCours extends BasicGameState{
 	private static int compteur = 0;
 	protected int xDepart = 16;
 	protected int yDepart = 14;
+	private final static String NORD = "Nord";
+	private final static String SUD = "Sud";
+	private final static String EST = "Est";
+	private final static String OUEST = "Ouest";
 	
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg)
@@ -32,18 +36,74 @@ public class JeuEnCours extends BasicGameState{
 		this.p = new Hero(xDepart,yDepart,3);
 		this.p.init(gc, sbg);
 		monde = new Map[20];
-		monde[0] = new Map("res/maps/Map1.tmx");
-		monde[1] = new Map("res/maps/Map2.tmx");
-		mapLocal = monde[1];
+		monde[0] = new Map("res/maps/Map1.tmx",1,-1,-1,-1);
+		monde[1] = new Map("res/maps/Map2.tmx",-1,0,-1,-1);
+		
 		hud = new Hud(p);
 		hud.init(gc, sbg);
+		chargementMap(0,gc,sbg,4,0);
+	}
+	
+	public void chargementMap(int num,GameContainer gc, StateBasedGame sbg,int nbMonstres,int typeM) throws SlickException{
+		if(monde[num].monstres.size()==0){
+			monde[num].ajoutMonstre(typeM, nbMonstres, p.posX, p.posY);
+			monde[num].init(gc, sbg);
+		}
+		mapLocal = monde[num];
+	}
+	
+	public void changementMap(GameContainer gc, StateBasedGame sbg) throws SlickException{
+		TiledMap map = mapLocal.map;
+		int nord = map.getLayerIndex(NORD);
+		int sud = map.getLayerIndex(SUD);
+		int est = map.getLayerIndex(EST);
+		int ouest = map.getLayerIndex(OUEST);
+		int i = p.posX;int j = p.posY;
+		int[] position; 
+		if(map.getTileId(i,j,nord) != 0){
+			chargementMap(mapLocal.mapAdjacentes[0],gc,sbg,4,0);
+			position = getEntre(sud,mapLocal.map);
+			p.setPosX(position[0]);
+			p.setPosY(position[1]-1);
+		}
+		if(map.getTileId(i, j, sud) != 0){
+			chargementMap(mapLocal.mapAdjacentes[1],gc,sbg,4,0);
+			position = getEntre(nord,mapLocal.map);
+			p.setPosX(position[0]);
+			p.setPosY(position[1]+1);
+		}
+		if(map.getTileId(i, j, est) != 0){
+			chargementMap(mapLocal.mapAdjacentes[2],gc,sbg,4,0);
+			position = getEntre(ouest,mapLocal.map);
+			p.setPosX(position[0]+1);
+			p.setPosY(position[1]);
+		}
+		if(map.getTileId(i, j, ouest) != 0){
+			chargementMap(mapLocal.mapAdjacentes[3],gc,sbg,4,0);
+			position = getEntre(est,mapLocal.map);
+			p.setPosX(position[0]-1);
+			p.setPosY(position[1]);
+		}
 	}
 
+	public int[] getEntre(int layer,TiledMap map){
+		int[] position = new int[2];
+		for(int i = 0 ; i < map.getWidth() ; i++){
+			for(int j =0 ; j < map.getHeight() ; j++){
+				if(map.getTileId(i, j, layer) != 0){
+					position[0]=i;position[1]=j;
+				}
+			}
+		}
+		return position;
+	}
+	
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
 		mapLocal.render(gc, sbg, g);
 		p.render(gc, sbg, g);
+		hud.render(gc, sbg, g);
 	}
 
 	@Override
@@ -54,6 +114,10 @@ public class JeuEnCours extends BasicGameState{
 		this.deplacementMonstre(compteur);
 		if(this.p.hp<=0) {
 			sbg.enterState(Jeu.GAMEOVER);
+		}
+		changementMap(gc,sbg);
+		if(compteur > 60){
+			compteur = 0;
 		}
 		
 	}
@@ -69,7 +133,7 @@ public class JeuEnCours extends BasicGameState{
 		List<Monstre> monstres = mapLocal.monstres;
 		TiledMap map = mapLocal.map;
 		if(compteur > 60){
-			compteur = 0;
+			
 			for(Monstre m : monstres){
 				m.deplacement(map);
 			}
@@ -80,9 +144,9 @@ public class JeuEnCours extends BasicGameState{
 	public void degatPersonnage(int compteur) {
 		List<Monstre> monstres = mapLocal.monstres;
 		TiledMap map = mapLocal.map;
-		p.attaquer(compteur,monstres,map,p);
+		p.attaquer(compteur,monstres,map);
 		for(Monstre m : monstres){
-			m.attaquer(compteur,monstres,map,p);
+			m.attaquer(compteur,p);
 		}
 	}
 	

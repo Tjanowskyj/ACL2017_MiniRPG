@@ -21,19 +21,32 @@ public class Map extends BasicGameState {
 
 	protected TiledMap map; // carte de la classe Map
 	protected StateBasedGame sbg;
-	protected static List<Monstre> monstres;
-	protected int Nord;
-	protected int Sud;
-	protected int Est;
-	protected int Ouest;
+	protected List<Monstre> monstres;
+	protected List<Objet> objets;
+	protected int[] mapAdjacentes;
 	
-	public Map(String tiledMap) throws SlickException{
+	
+	
+	private final static String OBSTACLES = "Obstacles";
+	private final static String FRONTIERES = "Frontières";
+	private final static String POTIONS = "Potions";
+	private final static String PIEGES = "Pièges";
+	private final static String KEY = "Clef";
+	
+	
+	public Map(String tiledMap,int nord,int sud,int est,int ouest) throws SlickException{
 		this.map = new TiledMap(tiledMap);
 		this.monstres = new ArrayList<Monstre>();
+		this.mapAdjacentes = new int[4];
+		this.mapAdjacentes[0] = nord;
+		this.mapAdjacentes[1] = sud;
+		this.mapAdjacentes[2] = est;
+		this.mapAdjacentes[3] = ouest;
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException{
 		initMonstre(gc,sbg);
+		//initObjet(gc,sbg);
 	}
 
 	@Override
@@ -45,6 +58,7 @@ public class Map extends BasicGameState {
 
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
 		this.sbg= sbg;
+		
 	}
 
 
@@ -93,5 +107,29 @@ public class Map extends BasicGameState {
 			monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
 		}
 	}
+	
+	public void initObjet(GameContainer gc, StateBasedGame sbd) throws SlickException{
+		int potion = map.getLayerIndex(POTIONS);
+		int piege = map.getLayerIndex(PIEGES);
+		int cle = map.getLayerIndex(KEY);
+		for(int i = 0 ; i < map.getWidth() ; i++){
+			for(int j =0 ; j < map.getHeight() ; j++){
+				if(map.getTileId(i,j,potion) != 0){
+					objets.add(new Potion(i,j));
+				}
+				if(map.getTileId(i, j, piege) != 0){
+					objets.add(new Piege(i,j));
+				}
+				if(map.getTileId(i, j, cle) != 0){
+					objets.add(new Key(i,j));
+				}
+			}
+		}
+		for(Objet o : objets){
+			o.init(gc,sbd);
+		}
+	}
+	
+	
 	
 }

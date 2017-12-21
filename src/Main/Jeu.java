@@ -22,8 +22,6 @@ public class Jeu extends StateBasedGame {
 		this.addState(new JeuEnCours());
 		this.addState(new GameOver());
 	}
-
-	
 	
 	@Override
 	public void initStatesList(GameContainer game) throws SlickException {
@@ -32,6 +30,6 @@ public class Jeu extends StateBasedGame {
 		this.enterState(JEU); //on entre dans la MAP1
 	}
 
-	
+
 	
 }
