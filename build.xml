@@ -11,9 +11,6 @@
         </javac>
     </target>
     <target name="jar" depends="compile">
-        <copy todir="${jar.dir}">
-            <fileset dir="${basedir}/lib/natives/natives-mac"/>
-        </copy>
         <mkdir dir="${jar.dir}"/>
         <jar destfile="${jar.dir}/${ant.project.name}.jar"
              basedir="${class.dir}">
@@ -25,7 +22,7 @@
     </target>
     <target name="run" depends="jar">
         <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
-            <jvmarg value="-Djava.library.path=./build/jar/"/>
+            <jvmarg value="-Djava.library.path=./lib/natives/natives-mac/"/>
         </java>
     </target>
 
