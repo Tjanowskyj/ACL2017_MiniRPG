@@ -20,6 +20,7 @@ public abstract class Map_Globale extends BasicGameState {
 	protected TiledMap map; // carte de la classe Map
 	protected static Hero p;
 	protected static List<Monstre> monstres;
+	protected static List<Objet> objets;
 	private static int compteur = 0;
 	protected Hud hud;
 	
@@ -124,5 +125,29 @@ public abstract class Map_Globale extends BasicGameState {
 			m.render(gc,sbg,g);
 		}
 	}
+	
+	
+	public void initObjet(GameContainer gc, StateBasedGame sbd, Graphics g) throws SlickException{
+		int potion = map.getLayerIndex(POTIONS);
+		int piege = map.getLayerIndex(PIEGES);
+		int cle = map.getLayerIndex(KEY);
+		for(int i = 0 ; i < map.getWidth() ; i++){
+			for(int j =0 ; j < map.getHeight() ; j++){
+				if(map.getTileId(i,j,potion) == 1){
+					objets.add(new Potion(i,j));
+				}
+				if(map.getTileId(i, j, piege) == 1){
+					objets.add(new Piege(i,j));
+				}
+				if(map.getTileId(i, j, cle) == 1){
+					objets.add(new Key(i,j));
+				}
+			}
+		}
+		for(Objet o : objets){
+			o.init(gc,sbd);
+		}
+	}
+	
 	
 }
