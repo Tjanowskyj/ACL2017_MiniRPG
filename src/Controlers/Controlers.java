@@ -1,10 +1,13 @@
 package Controlers;
 
+import Model.Monstre;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.tiled.TiledMap;
 
 import Model.Hero;
+
+import java.util.List;
 
 public class Controlers {
 
@@ -38,6 +41,15 @@ public class Controlers {
 
 		}
 		return false;
+	}
+
+	public static boolean attaquerHero(GameContainer gc, Hero p, TiledMap map, List<Monstre> monstres,int compteur){
+		if(gc.getInput().isKeyPressed(Input.KEY_E)){
+			p.attaquer(compteur,monstres,map);
+			return true;
+		}
+		return false;
+
 	}
 	
 }

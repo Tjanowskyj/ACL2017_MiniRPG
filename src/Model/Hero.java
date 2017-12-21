@@ -3,6 +3,7 @@ package Model;
 import java.util.List;
 
 import org.newdawn.slick.Animation;
+import org.lwjgl.Sys;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -96,25 +97,54 @@ public class Hero extends Personnage{
 		}		
 	}
 	
-	public void attaquer(int compteur, List<Monstre> monstres, TiledMap map, Hero p){
-		if(compteur > 60) {
-
+	public void attaquer(int compteur, List<Monstre> monstres, TiledMap map){
 			int xM, yM, xH, yH;
 			xH = this.posX;
 			yH = this.posY;
-			boolean dessus, dessous, droite, gauche, confondu, nonObjet;
 			Monstre m;
 			int obstacle = map.getLayerIndex("Obstacles");
 			for (int i = 0; i < monstres.size(); i++) {
+				boolean dessus = false;
+				boolean dessous = false;
+				boolean droite = false;
+				boolean gauche = false;
+				boolean confondu = false;
+				boolean nonObjet = false;
 				m = monstres.get(i);
 				xM = m.getPosX();
 				yM = m.getPosY();
-				dessus = xM == xH && ((yH - yM) == -1);
-				dessous = xM == xH && ((yH - yM) == 1);
-				droite = ((xM-xH) == -1) && yM == yH;
-				gauche = ((xM-xH) == 1) && yM == yH;
+				int distance = (int)Math.abs(Math.sqrt(Math.pow(xM-xH,2.0) + Math.pow(yM-yH,2.0)));
+				if(((distance >= 0) && (distance <= 2))){
+					switch (this.getDirection()){
+						case "H" :
+							if(((yH - distance) == yM) && (xM == xH)){
+								dessus = true;
+							}
+							break;
+
+						case "B" :
+							if(((yH + distance) == yM) && (xM == xH)){
+								dessous = true;
+							}
+							break;
+
+						case "G" :
+							if(((xH - distance) == xM) && (yM==yH)){
+								gauche = true;
+							}
+							break;
+
+						case "D" :
+							if(((xH + distance) == xM )&& (yM==yH)){
+								droite = true;
+							}
+							break;
+						default:
+							break;
+					}
+				}
 				confondu = (xM == xH) && (yM== yH);
-				nonObjet = map.getTileId(xM,yM,obstacle) == 0;
+				nonObjet = (map.getTileId(xM,yM,obstacle) == 0);
 				if ((dessus || dessous || droite || gauche || confondu) && nonObjet) {
 					m.takeDammage(1);
 				}
@@ -122,7 +152,7 @@ public class Hero extends Personnage{
 					monstres.remove(m);
 				}
 			}
-		}
+
 	}
 
 

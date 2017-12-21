@@ -47,11 +47,16 @@ public abstract class Map_Globale extends BasicGameState {
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0)
 			throws SlickException {
 		this.incrementCompteur();
-		this.degatPersonnage();
+
+		this.hud.update(gc, sbg, arg0);
+		this.degatPersonnage(gc);
 		this.gameOver(sbg);
 		this.deplacementHero(gc);
 		this.effetObjet();
 		this.deplacementMonstre();
+		if(compteur > 60){
+			compteur = 0;
+		}
 	}
 
 	public abstract int getID();
@@ -66,13 +71,12 @@ public abstract class Map_Globale extends BasicGameState {
 		this.hud.init(gc, sbg);
 	}
 
-	public void deplacementMonstre() {
-		if (compteur > 60) {
-			compteur = 0;
-			for (Monstre m : monstres) {
+
+	public void deplacementMonstre(){
+		if(compteur > 60){
+			for(Monstre m : monstres){
 				m.deplacement(map);
 			}
-			// degatPersonnage();
 		}
 	}
 
@@ -102,11 +106,11 @@ public abstract class Map_Globale extends BasicGameState {
 
 		return res;
 	}
-
-	public void degatPersonnage() {
-		p.attaquer(compteur, monstres, map, p);
-		for (Monstre m : monstres) {
-			m.attaquer(compteur, monstres, map, p);
+	
+	public void degatPersonnage(GameContainer gc) {
+		Controlers.attaquerHero(gc,p,map,monstres,compteur);
+		for(Monstre m : monstres){
+			m.attaquer(compteur,p);
 		}
 	}
 
