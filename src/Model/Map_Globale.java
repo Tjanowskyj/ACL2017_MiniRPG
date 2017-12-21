@@ -25,7 +25,9 @@ public abstract class Map_Globale extends BasicGameState {
 	
 	private final static String OBSTACLES = "Obstacles";
 	private final static String FRONTIERES = "Frontières";
-
+	private final static String POTIONS = "Potions";
+	private final static String PIEGES = "Pièges";
+	private final static String KEY = "Clef";
 	
 	public abstract void init(GameContainer gc, StateBasedGame sbg) throws SlickException;
 
@@ -73,8 +75,8 @@ public abstract class Map_Globale extends BasicGameState {
 		Monstre res = null;
 		int x = rand.nextInt(map.getWidth() - 2) +1;
 		int y = rand.nextInt(map.getHeight() - 2) +1;
-		int obstacles = map.getLayerIndex(Map_Globale.OBSTACLES);
-		int frontiere = map.getLayerIndex(Map_Globale.FRONTIERES);
+		int obstacles = map.getLayerIndex(OBSTACLES);
+		int frontiere = map.getLayerIndex(FRONTIERES);
 		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur) < 3
 				&& map.getTileId( x, y, obstacles) != 0 && map.getTileId(x,y,frontiere) == 1) { //tant que la case x,y n'est pas une case vide
 			x = rand.nextInt(map.getWidth()-2)+1;
@@ -115,6 +117,7 @@ public abstract class Map_Globale extends BasicGameState {
 			m.init(gc,sbg);
 		}
 	}
+	
 
 	public void renderMonstre(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		for(Monstre m : monstres){
