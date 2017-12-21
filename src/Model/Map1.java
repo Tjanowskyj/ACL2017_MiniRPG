@@ -34,7 +34,7 @@ public class Map1 extends Map_Globale {
 		super.update(gc, sbg, arg0);
 		if(this.p.getPosX() == 21 && this.p.getPosY() == 1){
 			this.sbg.enterState(Jeu.MAP2);
-			this.p.setPosX(22);this.p.setPosY(22);
+			this.p.setPosX(22);this.p.setPosY(20);
 		}
 	}
 	@Override

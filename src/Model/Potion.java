@@ -18,7 +18,7 @@ public class Potion extends Objet{
 	public void init(GameContainer gc, StateBasedGame sbg)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		this.image = new Image("res/sprites/Potion.png");
+		this.image = new Image("res/sprites/objets/Potion.png");
 	}
 
 	@Override

@@ -121,4 +121,5 @@ public abstract class Map_Globale extends BasicGameState {
 			m.render(gc,sbg,g);
 		}
 	}
+	
 }

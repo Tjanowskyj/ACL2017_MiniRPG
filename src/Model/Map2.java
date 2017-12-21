@@ -28,9 +28,9 @@ public class Map2 extends Map_Globale {
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
 		super.update(gc, sbg, arg0);
-		if(this.p.getPosX() == 22 && this.p.getPosY() == 23){
+		if(this.p.getPosX() == 22 && this.p.getPosY() == 21){
 			this.sbg.enterState(Jeu.MAP1);
-			this.p.setPosX(21);this.p.setPosY(2);
+			this.p.setPosX(22);this.p.setPosY(2);
 		}
 	}
 
