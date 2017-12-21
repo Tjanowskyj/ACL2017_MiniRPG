@@ -15,7 +15,7 @@
  </layer>
  <layer name="Obstacles" width="32" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA8WUuy8EURTG785ucim9KrtZJaVn47FbUiIkm6xHhz9gVViVR6Wg2IbVoZIg3kQhlBIaiUf8EQoF1jeZe82Za+7MrHh8yZc7c+ec+7tz7plhjLEE+18N/TM/C0//0FplEcbK4YrI12fNnLEWbl9L5eFVEjcSYmzUxWMhf349uA1wowu/D8x+bl9LxeEaEjcLzpzic3g+AL8b3B64V/BpPTJgjgtuhvDN/ku68E1mLVwn7oPwVSath+5szP4bduFfwp1wV5F8yqT10J2N2n9q/S+K5Ktn4Dcv+0/2geTPcOc+JH9Tsw+3eVrznDjzHP8aZ0r2wRrWWXfxhlj/SsN3m/f6HlSpffATojX3e/+/+g/ppP6HdApy/mrdv7MfnYKcP637Pnfu55Zb/kvR/bxwy9/Vc8D/wG+p0nCfr9LMSxXM52F8Z2HnfIrkLeLdlnzerwnxCyKGjs0+/Di4NXCW8CeRMwVnRe421tnx4b8bVq9viXFbjEcYjz32kAA3CQ8T/jLiV+C8Ji9aylgMPhPPXzG+GVavX4vxRox3GO/hXfjQsHM/9w1uwWQX8Q22Ib8dfsJ6bciNwrGwPt5kn8Cnhp3rp5RHzdLIH4DTYA7Ag3ArXF3ijIuT+wes92jYuV5Sz1+nCTAn4Sm4w9yDwk+Q+z2x1oFh2UsfzQV2nIALAAA=
+   H4sIAAAAAAAAA8WUO08CQRSFh4VktPRVKYFSSx/YiEKppRpNSEDp1B+AlYCVj8pCCxrFTq0sNL41FkZLWxMf8UdYWKh4Nsy6l2FndyEIJzmZ3dl755u9c3cZYyzCGqvZBvOz8HKN1mrxMdYKt/nKn4U4Y4PcvDaUh3dJ3JyHsXkLL3ic+b3g9sH9FvwpMKe5eW0oAAdJ3Co4a5Lv4HUX/HFwJ+BJwaf1SIG5KLgpwtf7L2rB15ndcI+4d8OXmbQeqrPR+y9pwX+AR+GxCvmUSeuhOhu5/+T631fIl8/Aad7oP6MPDP4KL92HwT9U7MNqntY8J848x8vjdBl9sId19i18INZ/VPCt5u2+B1lyH9RCtOZO71+v/5BK8n9IJTfnL9e9mv2o5Ob8ad3PeOl+nnjR9RTdzycvulp9uPwP/JfaNev5DsW8oYL+3IvvzFs6HyN5m3i3LYf3G0D8hoihY8iBHwA3CGcJP42cDJwVuUdY59iB/6OZvU7HS8xf2ewhAm4UThL+NuJ34Lwir6uZMT98K55/YfzWzF6n4zPmX+AT+EIzc//2DW5BZ1fwDYaRPwy/Y70wcrtgv1cdr7Ov4RvNzHVSzKZmceQn4DiYCXgGHoI7m0rjAuT+Feu9aWauneTzV2kJzDScgUf0PUj8CLk/FWuda0Xb6Rc8mmskgAsAAA==
   </data>
  </layer>
  <layer name="Frontières" width="32" height="23">

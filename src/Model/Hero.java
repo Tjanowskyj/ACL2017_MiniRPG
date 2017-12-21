@@ -160,4 +160,8 @@ public class Hero extends Personnage{
 		this.key = true;
 	}
 
+	public boolean getKey(){
+		return this.key;
+	}
+	
 }

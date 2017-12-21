@@ -36,15 +36,22 @@ public class JeuEnCours extends BasicGameState{
 		this.p = new Hero(xDepart,yDepart,3);
 		this.p.init(gc, sbg);
 		monde = new Map[20];
-		monde[0] = new Map("res/maps/Map1.tmx",1,-1,-1,-1);
-		monde[1] = new Map("res/maps/Map2.tmx",-1,0,2,-1);
-		monde[2] = new Map("res/maps/Map4.tmx",-1,-1,-1,1);
+		monde[0] = new Map("res/maps/Map1.tmx",1,2,-1,-1);
+		monde[1] = new Map("res/maps/Map2.tmx",-1,0,3,-1);
+		monde[2] = new Map("res/maps/Map3.tmx",0,-1,-1,-1);
+		monde[3] = new Map("res/maps/Map4.tmx",-1,-1,-1,1);
+		monde[4] = new Map("res/maps/Map5.tmx",0,-1,-1,-1);
 		hud = new Hud(p);
 		hud.init(gc, sbg);
 		chargementMap(0,gc,sbg,4,0);
 	}
 	
 	public void chargementMap(int num,GameContainer gc, StateBasedGame sbg,int nbMonstres,int typeM) throws SlickException{
+		if(num==2){
+			if(this.p.getKey()){
+				num=4;
+			}
+		}
 		if(monde[num].monstres.size()==0){
 			monde[num].ajoutMonstre(typeM, nbMonstres, p.posX, p.posY);
 			monde[num].init(gc, sbg);
@@ -67,6 +74,9 @@ public class JeuEnCours extends BasicGameState{
 			p.setPosY(position[1]-1);
 		}
 		if(map.getTileId(i, j, sud) != 0){
+			if(mapLocal==monde[4]){
+				sbg.enterState(Jeu.VICTOIRE);
+			}
 			chargementMap(mapLocal.mapAdjacentes[1],gc,sbg,4,0);
 			position = getEntre(nord,mapLocal.map);
 			p.setPosX(position[0]);
