@@ -105,6 +105,11 @@ public class Map extends BasicGameState {
 			res = new Fantome(x,y,2);
 			res.setDirection("B");
 			break;
+
+		case 1:
+			res = new Robot(x,y,4);
+			res.setDirection("B");
+			break;
 		default :	
 			break;
 		}
@@ -114,7 +119,7 @@ public class Map extends BasicGameState {
 	
 	public void ajoutMonstre(int type,int nombre,int xJoueur, int yJoueur){
 		for(int i = 0;i<nombre;i++){
-			monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
+			monstres.add(this.placementMonstre(type, xJoueur, yJoueur));
 		}
 	}
 	
@@ -141,17 +146,15 @@ public class Map extends BasicGameState {
 	}
 	
 	public void effetObjet(Hero p) {
-		for(Iterator<Objet> it = objets.iterator(); it.hasNext();){
-			Objet o = it.next();
-			if (p.getPosX() == o.getPosX()
-					&& p.getPosY() == o.getPosY()) {
-				o.effetObjet(p);
-				if (o instanceof Potion || o instanceof Key) {
+			for(Iterator<Objet> it = objets.iterator(); it.hasNext();){
+				Objet o = it.next();
+				if (p.getPosX() == o.getPosX()
+						&& p.getPosY() == o.getPosY()) {
+					o.effetObjet(p);
 					it.remove();
 				}
 			}
 		}
-	}
 	
 	
 }

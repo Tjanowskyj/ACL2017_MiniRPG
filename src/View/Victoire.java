@@ -7,6 +7,8 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import Main.Jeu;
+
 public class Victoire extends BasicGameState {
 
 	private Image fond;
@@ -33,7 +35,7 @@ public class Victoire extends BasicGameState {
 	@Override
 	public int getID() {
 		// TODO Auto-generated method stub
-		return JEU.VICTOIRE;
+		return Jeu.VICTOIRE;
 	}
 
 

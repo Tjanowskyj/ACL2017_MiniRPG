@@ -1,7 +1,6 @@
 package Model;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -43,17 +42,27 @@ public class JeuEnCours extends BasicGameState{
 		monde[4] = new Map("res/maps/Map5.tmx",0,-1,-1,-1);
 		hud = new Hud(p);
 		hud.init(gc, sbg);
-		chargementMap(0,gc,sbg,4,0);
+		HashMap<Integer, Integer> listeMonstres = new HashMap<Integer,Integer>();
+		listeMonstres.put(0,4);
+		listeMonstres.put(1,2);
+		chargementMap(0,gc,sbg,listeMonstres);
 	}
 	
-	public void chargementMap(int num,GameContainer gc, StateBasedGame sbg,int nbMonstres,int typeM) throws SlickException{
+
+	public void chargementMap(int num,GameContainer gc, StateBasedGame sbg,HashMap<Integer,Integer> lm) throws SlickException{
 		if(num==2){
 			if(this.p.getKey()){
 				num=4;
 			}
 		}
 		if(monde[num].monstres.size()==0){
-			monde[num].ajoutMonstre(typeM, nbMonstres, p.posX, p.posY);
+			Set<Integer> set = lm.keySet();
+			Iterator<Integer> it = set.iterator();
+			while(it.hasNext()){
+				int typeM = it.next();
+				int nbMonstres = lm.get(typeM);
+				monde[num].ajoutMonstre(typeM,nbMonstres,p.getPosX(),p.getPosY());
+			}
 			monde[num].init(gc, sbg);
 		}
 		mapLocal = monde[num];
@@ -65,10 +74,13 @@ public class JeuEnCours extends BasicGameState{
 		int sud = map.getLayerIndex(SUD);
 		int est = map.getLayerIndex(EST);
 		int ouest = map.getLayerIndex(OUEST);
+		HashMap<Integer, Integer> listeMonstres = new HashMap<Integer,Integer>();
+		listeMonstres.put(0,4);
+		listeMonstres.put(1,2);
 		int i = p.posX;int j = p.posY;
 		int[] position; 
 		if(map.getTileId(i,j,nord) != 0){
-			chargementMap(mapLocal.mapAdjacentes[0],gc,sbg,4,0);
+			chargementMap(mapLocal.mapAdjacentes[0],gc,sbg,listeMonstres);
 			position = getEntre(sud,mapLocal.map);
 			p.setPosX(position[0]);
 			p.setPosY(position[1]-1);
@@ -76,20 +88,21 @@ public class JeuEnCours extends BasicGameState{
 		if(map.getTileId(i, j, sud) != 0){
 			if(mapLocal==monde[4]){
 				sbg.enterState(Jeu.VICTOIRE);
+			}else{
+				chargementMap(mapLocal.mapAdjacentes[1],gc,sbg,listeMonstres);
+				position = getEntre(nord,mapLocal.map);
+				p.setPosX(position[0]);
+				p.setPosY(position[1]+1);
 			}
-			chargementMap(mapLocal.mapAdjacentes[1],gc,sbg,4,0);
-			position = getEntre(nord,mapLocal.map);
-			p.setPosX(position[0]);
-			p.setPosY(position[1]+1);
 		}
 		if(map.getTileId(i, j, est) != 0){
-			chargementMap(mapLocal.mapAdjacentes[2],gc,sbg,4,0);
+			chargementMap(mapLocal.mapAdjacentes[2],gc,sbg,listeMonstres);
 			position = getEntre(ouest,mapLocal.map);
 			p.setPosX(position[0]+1);
 			p.setPosY(position[1]);
 		}
 		if(map.getTileId(i, j, ouest) != 0){
-			chargementMap(mapLocal.mapAdjacentes[3],gc,sbg,4,0);
+			chargementMap(mapLocal.mapAdjacentes[3],gc,sbg,listeMonstres);
 			position = getEntre(est,mapLocal.map);
 			p.setPosX(position[0]-1);
 			p.setPosY(position[1]);

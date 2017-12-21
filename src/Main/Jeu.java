@@ -8,6 +8,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 import Model.*;
 import View.GameOver;
+import View.Victoire;
 public class Jeu extends StateBasedGame {
 
 	
@@ -20,6 +21,7 @@ public class Jeu extends StateBasedGame {
 		super(name);
 		this.addState(new JeuEnCours());
 		this.addState(new GameOver());
+		this.addState(new Victoire());
 	}
 	
 	@Override
