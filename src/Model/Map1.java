@@ -19,6 +19,8 @@ public class Map1 extends Map_Globale {
 		int yJoueur = 14;
 		this.p = new Hero(xJoueur,yJoueur,3);
 		this.monstres = new ArrayList<Monstre>();
+		this.objets = new ArrayList<Objet>();
+		this.initObjet(gc, sbg);
 		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
 		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
 		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));

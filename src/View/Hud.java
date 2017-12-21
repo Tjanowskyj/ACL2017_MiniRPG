@@ -34,9 +34,6 @@ public class Hud extends BasicGameState {
 
 	@Override
 	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
-		if(this.p.getHp() >= 3) {	
-			this.coeurs[3].draw(0,0);
-		}else this.coeurs[this.p.getHp()].draw(0,0);
 	}
 
 	@Override

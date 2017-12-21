@@ -17,7 +17,7 @@ public class Key extends Objet{
 	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		this.image = new Image("res/sprites/Piege.png");
+		this.image = new Image("res/sprites/objets/key.png");
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class Key extends Objet{
 	@Override
 	public void effetObjet(Hero p) {
 		// TODO Auto-generated method stub
-		p.getKey();
+		p.findKey();
 	}
 
 }
