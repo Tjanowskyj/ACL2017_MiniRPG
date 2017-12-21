@@ -37,8 +37,8 @@ public class JeuEnCours extends BasicGameState{
 		this.p.init(gc, sbg);
 		monde = new Map[20];
 		monde[0] = new Map("res/maps/Map1.tmx",1,-1,-1,-1);
-		monde[1] = new Map("res/maps/Map2.tmx",-1,0,-1,-1);
-		
+		monde[1] = new Map("res/maps/Map2.tmx",-1,0,2,-1);
+		monde[2] = new Map("res/maps/Map4.tmx",-1,-1,-1,1);
 		hud = new Hud(p);
 		hud.init(gc, sbg);
 		chargementMap(0,gc,sbg,4,0);
@@ -92,6 +92,7 @@ public class JeuEnCours extends BasicGameState{
 			for(int j =0 ; j < map.getHeight() ; j++){
 				if(map.getTileId(i, j, layer) != 0){
 					position[0]=i;position[1]=j;
+					break;
 				}
 			}
 		}
