@@ -26,11 +26,18 @@ public abstract class Map_Globale extends BasicGameState {
 	
 	public abstract void init(GameContainer gc, StateBasedGame sbg) throws SlickException;
 
-	public abstract void render(GameContainer gc, StateBasedGame stg, Graphics g) throws SlickException;
+	@Override
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		this.sbg= sbg;
+		this.map.render(0,0);
+		p.render(gc, sbg, g);
+		this.hud.render(gc, sbg, g);
+		this.renderMonstre(gc,sbg,g);
+	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
 		this.incrementCompteur();
-		this.p.update(gc, sbg, arg0);
+		//this.p.update(gc, sbg, arg0);
 		this.hud.update(gc, sbg, arg0);
 		this.sbg= sbg;
 		this.degatPersonnage();
@@ -75,7 +82,7 @@ public abstract class Map_Globale extends BasicGameState {
 		}
 		switch(i) {
 		case 0:
-			res = new Fantome(x,y,5);
+			res = new Fantome(x,y,2);
 			break;
 		default :	
 			break;

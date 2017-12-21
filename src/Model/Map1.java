@@ -16,8 +16,8 @@ public class Map1 extends Map_Globale {
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		this.sbg = sbg;
 		this.map = new TiledMap("res/maps/Map1.tmx");
-		int xJoueur = 2;
-		int yJoueur = 2;
+		int xJoueur = 16;
+		int yJoueur = 14;
 		this.p = new Hero(xJoueur,yJoueur,3);
 		this.monstres = new ArrayList<Monstre>();
 		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
@@ -28,15 +28,6 @@ public class Map1 extends Map_Globale {
 		initMonstre(gc,sbg);
 		this.p.init(gc, sbg);
 		this.initHud(p, gc, sbg);
-	}
-
-	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		this.sbg= sbg;
-		this.map.render(0,0);
-		p.render(gc, sbg, g);
-		this.hud.render(gc, sbg, g);
-		this.renderMonstre(gc,sbg,g);
 	}
 
 	@Override
