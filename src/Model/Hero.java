@@ -55,16 +55,16 @@ public class Hero extends Personnage{
 		switch(this.direction){
 		
 		case "H":
-			this.haut.draw(this.posX, this.posY);
+			this.haut.draw(this.posX * 32, this.posY * 32);
 			break;
 		case "B" :
-			this.bas.draw(this.posX, this.posY);
+			this.bas.draw(this.posX * 32, this.posY * 32);
 			break;
 		case "G" :
-			this.gauche.draw(this.posX, this.posY);
+			this.gauche.draw(this.posX * 32, this.posY * 32);
 			break;
 		case "D":
-			this.droite.draw(this.posX, this.posY);
+			this.droite.draw(this.posX * 32, this.posY * 32);
 			break;
 		}
 	}
