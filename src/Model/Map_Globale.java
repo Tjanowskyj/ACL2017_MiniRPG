@@ -48,11 +48,10 @@ public abstract class Map_Globale extends BasicGameState {
 			throws SlickException {
 		this.incrementCompteur();
 
-		this.hud.update(gc, sbg, arg0);
+
 		this.degatPersonnage(gc);
 		this.gameOver(sbg);
 		this.deplacementHero(gc);
-		this.effetObjet();
 		this.deplacementMonstre();
 		if(compteur > 60){
 			compteur = 0;
@@ -168,16 +167,5 @@ public abstract class Map_Globale extends BasicGameState {
 		}
 	}
 
-	public void effetObjet() {
-		for(Iterator<Objet> it = objets.iterator(); it.hasNext();){
-			Objet o = it.next();
-			if (this.p.getPosX() == o.getPosX()
-					&& this.p.getPosY() == o.getPosY()) {
-				o.effetObjet(this.p);
-				if (o instanceof Potion || o instanceof Key) {
-					it.remove();
-				}
-			}
-		}
-	}
+	
 }

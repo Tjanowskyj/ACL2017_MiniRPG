@@ -21,4 +21,39 @@
    H4sIAAAAAAAAA/vLyMDwkJmBoQtIvwTiV2j4NRD3APEXIO4H4qlA/BWIL0PxVKgcTPwLmjiyvn4kORB7IdBeWSYGBjkgHggAst8WaLfdANofC7Q7bgDt/wuMh3+MA2P/wQGO/9YBjv+lAxz/Rwc4/htH8/+Izv+j5f9o/I/G/2j8D4b4PwjEh6iADwPxEmZI3b6MGbe5IHUg+wGPuQWbgAsAAA==
   </data>
  </layer>
+ <layer name="Nord" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
+ <layer name="Sud" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3OwQkAIAwEwYO0bqxbO/ApgRnY/yYAADDbqqRvu36fvB1syaQ4gAsAAA==
+  </data>
+ </layer>
+ <layer name="Est" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYOSBFuaBtX/JANt/ZIDtHwWjYBSMglEwCkYyAADl/9e9gAsAAA==
+  </data>
+ </layer>
+ <layer name="Ouest" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
+ <layer name="Potions" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
+ <layer name="Clef" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
+ <layer name="Pièges" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
 </map>

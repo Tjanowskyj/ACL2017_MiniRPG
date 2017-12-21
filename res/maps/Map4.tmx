@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="32" height="23" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="Atlas.tsx"/>
+ <layer name="Sol" width="32" height="23" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DMQkAAAwDsMKU1L/JutiVQHpJVVXVlwMenjTPgAsAAA==
+  </data>
+ </layer>
+ <layer name="Décorations" width="32" height="23" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA8WWUQqAMAiGB55k1EkLOkhBBynoXD2MQQ236T/HBB8q9VNnlnPjZaegB+l9Z8CnxreIqYnTUr+FXBT0NuJPhTjcs03AjX6pf7z29L+Xs+fk7Nh3Cf8p2KCzqPFbKOgKsGr1SepvmX/trFnzNfKdy1Y+UreWj85ejpPLTVq/9Dy1PjV+rCfV3nyEZ8nnYqF5tPC5nY/2xTP26PtndSY99g+XW+6bWONzPZPuBond6P+fkfICX9AKl4ALAAA=
+  </data>
+ </layer>
+ <layer name="Obstacles" width="32" height="23" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGBpgHjMDw3wgXsBMPzsnINm1D8jeD8QHCNg/iZGwWcSCDUh67gHZ94H4AQFzNuGwfwOF4fYPqP8/yAwW8s0YiDhEBsTGIa0AsXGIDaQD4zUDiDNxxC8xgJI4bAfa2wHEnRTYTwlYDrR3BRCvRLN/sKcpasQbPkAoTdE63gilKVzxNlwBofjGVT9QCxCKb1z1A7UApfFNan6hdv4nNb9Qu07BF37Y0g6xdQo57Q90fdjSDrF1CrntD0rbLYMdAABaPdqKgAsAAA==
+  </data>
+ </layer>
+ <layer name="Frontières" width="32" height="23" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA1vEzMCwCAmr0RmD7BwoMGo/A8OhAba/dYDtXzrA9h8dYPubRnj6H7V/1P5R+0ftH7V/5No/kO1fAIHY2IGACwAA
+  </data>
+ </layer>
+ <layer name="Nord" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
+ <layer name="Sud" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
+ <layer name="Est" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQsvoAAAgJcBCgEFJIALAAA=
+  </data>
+ </layer>
+ <layer name="Ouest" width="32" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3NQQ0AMAgEMBK8I2VSpgsX3Kc10CrIms7+L/z/8A8A3FrdkJCMgAsAAA==
+  </data>
+ </layer>
+ <layer name="Potions" width="32" height="23" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAVDHSgyD7QLRsEoGAWjYBSMguELRuvZUUBtAADl76e7gAsAAA==
+  </data>
+ </layer>
+ <layer name="Clef" width="32" height="23" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3OMQ0AAAgDsCUowb9JXLCnVdCEbzvtAQAALQef7yf4gAsAAA==
+  </data>
+ </layer>
+ <layer name="Pièges" width="32" height="23" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGBmAkXGgXTAKhjoYTmloOPllFIyCUTAKBjMYLW9HATYAADv+G9iACwAA
+  </data>
+ </layer>
+</map>

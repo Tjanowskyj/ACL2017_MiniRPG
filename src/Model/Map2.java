@@ -9,33 +9,35 @@ import org.newdawn.slick.tiled.TiledMap;
 
 import Main.Jeu;
 
-public class Map2 extends Map_Globale {
+public class Map2 extends Map {
+
+	
+
+	public Map2(String tiledMap, int nord, int sud, int est, int ouest)
+			throws SlickException {
+		super(tiledMap, nord, sud, est, ouest);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		super.init(gc, sbg);
+		this.sbg = sbg;
 		this.map = new TiledMap("res/maps/Map2.tmx");
-		this.monstres = new ArrayList<Monstre>();
-		this.monstres.add(this.placementMonstre(0, this.p.getPosX(), this.p.getPosY()));
-		this.monstres.add(this.placementMonstre(0, this.p.getPosX(), this.p.getPosY()));
-		this.monstres.add(this.placementMonstre(0, this.p.getPosX(), this.p.getPosY()));
-		this.monstres.add(this.placementMonstre(0, this.p.getPosX(), this.p.getPosY()));
-		this.monstres.add(new Fantome(4,4,5));
 		initMonstre(gc,sbg);
-		this.initHud(p, gc, sbg);
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
 		super.update(gc, sbg, arg0);
-		if(this.p.getPosX() == 22 && this.p.getPosY() == 21){
-			sbg.enterState(Jeu.MAP1);
-			this.p.setPosX(22);this.p.setPosY(2);
-		}
+
+		/*
+		if(this.p.getPosX() == 22 && this.p.getPosY() == 23){
+			this.sbg.enterState(Jeu.MAP1);
+			this.p.setPosX(21);this.p.setPosY(2);
+		}*/
+
 	}
 
-	@Override
-	public int getID() {
-		// TODO Auto-generated method stub
-		return Jeu.MAP2;
-	}
+
 
 }
