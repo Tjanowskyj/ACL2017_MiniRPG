@@ -91,4 +91,4 @@ Utilisation de la  troisième version :
     Lancer la commande :
         - "ant -file buildMac.xml" si vous êtes sur MacOS 
         - "ant -file buildLinux.xml" si vous êtes sur Linux
-        - "ant -file buildWindows.xml" si vous êtes sur Windows
+        
