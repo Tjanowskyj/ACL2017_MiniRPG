@@ -12,6 +12,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -37,6 +38,7 @@ public class Map extends BasicGameState {
 	public Map(String tiledMap,int nord,int sud,int est,int ouest) throws SlickException{
 		this.map = new TiledMap(tiledMap);
 		this.monstres = new ArrayList<Monstre>();
+		this.objets = new ArrayList<Objet>();
 		this.mapAdjacentes = new int[4];
 		this.mapAdjacentes[0] = nord;
 		this.mapAdjacentes[1] = sud;
@@ -46,7 +48,7 @@ public class Map extends BasicGameState {
 	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException{
 		initMonstre(gc,sbg);
-		//initObjet(gc,sbg);
+		initObjet(gc,sbg);
 	}
 
 	@Override
@@ -54,6 +56,7 @@ public class Map extends BasicGameState {
 		this.sbg= sbg;
 		this.map.render(0,0);
 		this.renderMonstre(gc,sbg,g);
+		this.renderObjets(gc,sbg,g);
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
@@ -75,6 +78,13 @@ public class Map extends BasicGameState {
 	public void renderMonstre(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		for(Monstre m : monstres){
 			m.render(gc,sbg,g);
+		}
+	}
+	
+	public void renderObjets(GameContainer gc, StateBasedGame sbg, Graphics g)
+			throws SlickException {
+		for (Objet o : objets) {
+			o.render(gc, sbg, g);
 		}
 	}
 	
@@ -130,6 +140,18 @@ public class Map extends BasicGameState {
 		}
 	}
 	
+	public void effetObjet(Hero p) {
+		for(Iterator<Objet> it = objets.iterator(); it.hasNext();){
+			Objet o = it.next();
+			if (p.getPosX() == o.getPosX()
+					&& p.getPosY() == o.getPosY()) {
+				o.effetObjet(p);
+				if (o instanceof Potion || o instanceof Key) {
+					it.remove();
+				}
+			}
+		}
+	}
 	
 	
 }

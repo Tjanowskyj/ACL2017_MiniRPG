@@ -27,6 +27,17 @@ public class Map1 extends Map {
 		this.sbg = sbg;
 		this.map = new TiledMap("res/maps/Map1.tmx");
 
+		int xJoueur = 16;
+		int yJoueur = 14;
+		this.monstres = new ArrayList<Monstre>();
+		this.objets = new ArrayList<Objet>();
+		this.initObjet(gc, sbg);
+		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
+		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
+		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
+		this.monstres.add(this.placementMonstre(0, xJoueur, yJoueur));
+		initMonstre(gc,sbg);
+
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{

@@ -110,11 +110,13 @@ public class JeuEnCours extends BasicGameState{
 	public void update(GameContainer gc, StateBasedGame sbg, int arg2)
 			throws SlickException {
 		compteur++;
+		degatPersonnage(gc);
 		Controlers.mouvementsHero(gc, p, mapLocal.map);
-		this.deplacementMonstre(compteur);
+		this.deplacementMonstre();
 		if(this.p.hp<=0) {
 			sbg.enterState(Jeu.GAMEOVER);
 		}
+		mapLocal.effetObjet(p);
 		changementMap(gc,sbg);
 		if(compteur > 60){
 			compteur = 0;
@@ -129,22 +131,20 @@ public class JeuEnCours extends BasicGameState{
 	
 	
 	
-	public void deplacementMonstre(int compteur){
-		List<Monstre> monstres = mapLocal.monstres;
+	public void deplacementMonstre(){
 		TiledMap map = mapLocal.map;
+		List<Monstre> monstres = mapLocal.monstres;
 		if(compteur > 60){
-			
 			for(Monstre m : monstres){
 				m.deplacement(map);
 			}
-			//degatPersonnage();
 		}
 	}
 
-	public void degatPersonnage(int compteur) {
-		List<Monstre> monstres = mapLocal.monstres;
+	public void degatPersonnage(GameContainer gc) {
 		TiledMap map = mapLocal.map;
-		p.attaquer(compteur,monstres,map);
+		List<Monstre> monstres = mapLocal.monstres;
+		Controlers.attaquerHero(gc,p,map,monstres,compteur);
 		for(Monstre m : monstres){
 			m.attaquer(compteur,p);
 		}

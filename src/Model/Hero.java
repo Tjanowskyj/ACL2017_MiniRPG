@@ -156,7 +156,7 @@ public class Hero extends Personnage{
 	}
 
 
-	public void getKey(){
+	public void findKey(){
 		this.key = true;
 	}
 
