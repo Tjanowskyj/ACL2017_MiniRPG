@@ -1,17 +1,25 @@
 package Model;
 
+import java.util.List;
+
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
-
-import java.util.List;
 
 public class Hero extends Personnage{
 
 	private boolean mort;
+	private static Animation haut;
+	private static Animation bas;
+	private static Animation gauche;
+	private static Animation droite;
+
+	
 
 	public Hero(int x, int y, int hp) {
 		super(x, y,hp);
@@ -21,11 +29,44 @@ public class Hero extends Personnage{
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
 		this.image = new Image("res/sprites/herov1.png");
+		SpriteSheet g = new SpriteSheet("res/sprites/heros/gauche.png",
+				32, 32);
+		SpriteSheet d = new SpriteSheet("res/sprites/heros/droite.png",
+				32, 32);
+		SpriteSheet b = new SpriteSheet("res/sprites/heros/bas.png", 32,
+				32);
+		SpriteSheet h = new SpriteSheet("res/sprites/heros/haut.png", 32,
+				32);
+		this.haut = new Animation();
+		this.bas = new Animation();
+		this.gauche = new Animation();
+		this.droite = new Animation();
+		
+		for(int i = 0;i < 3;i++){
+			this.haut.addFrame(h.getSprite(i, 0), 150);
+			this.bas.addFrame(b.getSprite(i, 0), 150);
+			this.gauche.addFrame(g.getSprite(i, 0), 150);
+			this.droite.addFrame(d.getSprite(i, 0), 150);
+		}
 	}
 
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
-		this.image.draw(this.posX * 32, this.posY * 32);
+		switch(this.direction){
+		
+		case "H":
+			this.haut.draw(this.posX * 32, this.posY * 32);
+			break;
+		case "B" :
+			this.bas.draw(this.posX * 32, this.posY * 32);
+			break;
+		case "G" :
+			this.gauche.draw(this.posX * 32, this.posY * 32);
+			break;
+		case "D":
+			this.droite.draw(this.posX * 32, this.posY * 32);
+			break;
+		}
 	}
 
 
