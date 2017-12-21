@@ -39,7 +39,7 @@ public class Jeu extends StateBasedGame {
 		try {
 			agc = new AppGameContainer(new Jeu(NAME));
 			agc.setTargetFrameRate(FPS);
-			agc.setDisplayMode(640, 640, false); //largeur, hauteur, plein écran
+			agc.setDisplayMode(1024, 800, false); //largeur, hauteur, plein écran
 			agc.setShowFPS(true);//affichage du nombre d'images par seconde
 			agc.start(); // lancement du jeu
 		}catch(SlickException e) {

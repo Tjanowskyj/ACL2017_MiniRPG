@@ -15,7 +15,7 @@ public class Map1 extends Map_Globale {
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		this.sbg = sbg;
-		this.map = new TiledMap("res/maps/Map1.tmx");
+		this.map = new TiledMap("res/maps/Map2.tmx");
 		int xJoueur = 16;
 		int yJoueur = 14;
 		this.p = new Hero(xJoueur,yJoueur,3);
