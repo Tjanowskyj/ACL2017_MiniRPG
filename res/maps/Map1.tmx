@@ -13,7 +13,7 @@
  </layer>
  <layer name="Obstacles" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGNlgHjMDw3wgXsBMHbX7gHL7gfgAEeYRo/YeUO4+ED8gwjxi1P4Dyv0HybMQNo8UtbQChMJ8AiMDw0RG4s0jFOYbgGZtJME8QmF+AWjWRRLMGwxhTiyYRIK/QIBQXG5iJF4tCIzmtYEHAHoXxQdABgAA
+   H4sIAAAAAAAAA2NgGNlgHjMDw3wgXsBMHbX7gHL7gfgAEeYRo/YeUO4+ED8gwjxi1P4Dyv0HybMQNo8UtQMFJjAyMExkpJ55G4BmbaSieReAZl2konmDCUwi0V+E8s8mRuLVgsBoXht4AAAB1mejQAYAAA==
   </data>
  </layer>
  <layer name="Frontières" width="20" height="20">
