@@ -37,7 +37,7 @@ public class Fantome extends Monstre {
 
 	@Override
 	public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
-		this.image = new Image("res/sprites/montres/fantome.png");
+		this.image = new Image("res/sprites/monstres/fantome.png");
 	}
 
 	@Override
