@@ -51,6 +51,10 @@ public abstract class Personnage extends BasicGameState {
 			this.mort = true;
 		}
 	}
+	
+	public void heal(){
+		if(this.hp < 3) this.hp++;
+	}
 
 	public boolean estMort() {
 		return this.mort;
