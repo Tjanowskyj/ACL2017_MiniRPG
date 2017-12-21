@@ -84,7 +84,9 @@ Utilisation de la deuxième version :
     Pensez à ajouter toutes les librairies présentes dans le dossier lib.
 
 Utilisation de la  troisième version :
-    
+
+    But du jeu : trouver la clé pour s'échaper, suiver les chemins de terres pour accéder aux différents lieux.
+    La sortie se trouve sur la map du bas.
     Il faut avoir la commande ant de apache sur son OS.
     Lancer la commande :
         - "ant -file buildMac.xml" si vous êtes sur MacOS 
