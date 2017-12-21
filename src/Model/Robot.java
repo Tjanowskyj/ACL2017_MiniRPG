@@ -34,7 +34,7 @@ public class Robot extends Monstre {
 
     @Override
     public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
-        SpriteSheet s = new SpriteSheet("res/sprites/montres/robot_sprites.png",
+        SpriteSheet s = new SpriteSheet("res/sprites/monstres/robot_sprites.png",
                 32, 32);
         this.base = new Animation();
         for(int i = 0;i < 3;i++){

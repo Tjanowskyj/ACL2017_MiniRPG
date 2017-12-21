@@ -40,7 +40,7 @@ Fonctionnalités :
     Sprint 3 :
     
     Le héros peut attaquer les monstres sur la case adjacente.
-    Le joueur appuie sur une touche pour que le héros attaque (coup par coup)
+    Le joueur appuie sur une touche (E) pour que le héros attaque (coup par coup)
     Plusieurs labyrinthes à terminer pour terminer le jeu.
     Écran victoire,défaite.
     Animation sprites.
@@ -75,6 +75,7 @@ Utilisation de la première version :
         
         
 Utilisation de la deuxième version :
+    
     Sur Linux si erreur du type : Failed to open device (/dev/input/event9): Failed to open device /dev/input/event9 (13)
     alors faire les commandes dans le terminal :    - cd /
                                                     - sudo chmod o+r /dev/input/*
@@ -82,3 +83,10 @@ Utilisation de la deuxième version :
     Installation native en fonctino de votre OS sur eclipse : https://docs.adacore.com/gnatbench-docs/src/using_ajis/java_path_config.html
     Pensez à ajouter toutes les librairies présentes dans le dossier lib.
 
+Utilisation de la  troisième version :
+    
+    Il faut avoir la commande ant de apache sur son OS.
+    Lancer la commande :
+        - "ant -file buildMac.xml" si vous êtes sur MacOS 
+        - "ant -file buildLinux.xml" si vous êtes sur Linux
+        - "ant -file buildWindows.xml" si vous êtes sur Windows

@@ -3,7 +3,7 @@
     <property name="build.dir" value="build"/>
     <property name="class.dir" value="${build.dir}/classes"/>
     <property name="jar.dir" value="${build.dir}/jar"/>
-    <property name="main-class" value="Main/Jeu"/>
+    <property name="main-class" value="Main/Main"/>
     <target name="compile">
         <mkdir dir="${class.dir}"/>
         <javac srcdir="${src.dir}" destdir="${class.dir}">
