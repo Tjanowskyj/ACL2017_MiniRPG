@@ -165,7 +165,5 @@ public abstract class Map_Globale extends BasicGameState {
 		for (Objet o : objets) {
 			o.init(gc, sbd);
 		}
-	}
-
-	
+	}	
 }
