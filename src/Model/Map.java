@@ -95,8 +95,8 @@ public class Map extends BasicGameState {
 		int y = rand.nextInt(map.getHeight() - 2) +1;
 		int obstacles = map.getLayerIndex("Obstacles");
 		int frontiere = map.getLayerIndex("Frontières");
-		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur) < 3
-				&& map.getTileId( x, y, obstacles) != 0 && map.getTileId(x,y,frontiere) == 1) { //tant que la case x,y n'est pas une case vide
+		while((Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur) < 3)
+				&& (map.getTileId( x, y, obstacles) != 0) && (map.getTileId(x,y,frontiere) != 0)) { //tant que la case x,y n'est pas une case vide
 			x = rand.nextInt(map.getWidth()-2)+1;
 			y = rand.nextInt(map.getHeight()-2)+1;
 		}
