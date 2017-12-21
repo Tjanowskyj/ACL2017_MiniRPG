@@ -19,16 +19,18 @@ public abstract class Map_Globale extends BasicGameState {
 
 	protected TiledMap map; // carte de la classe Map
 	protected static Hero p;
-	protected StateBasedGame sbg;
 	protected static List<Monstre> monstres;
 	private static int compteur = 0;
 	protected Hud hud;
+	
+	private final static String OBSTACLES = "Obstacles";
+	private final static String FRONTIERES = "Frontières";
+
 	
 	public abstract void init(GameContainer gc, StateBasedGame sbg) throws SlickException;
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		this.sbg= sbg;
 		this.map.render(0,0);
 		p.render(gc, sbg, g);
 		this.hud.render(gc, sbg, g);
@@ -37,9 +39,7 @@ public abstract class Map_Globale extends BasicGameState {
 
 	public void update(GameContainer gc, StateBasedGame sbg, int arg0) throws SlickException{
 		this.incrementCompteur();
-		//this.p.update(gc, sbg, arg0);
 		this.hud.update(gc, sbg, arg0);
-		this.sbg= sbg;
 		this.degatPersonnage();
 		this.gameOver(sbg);
 		this.deplacementHero(gc);
@@ -73,8 +73,8 @@ public abstract class Map_Globale extends BasicGameState {
 		Monstre res = null;
 		int x = rand.nextInt(map.getWidth() - 2) +1;
 		int y = rand.nextInt(map.getHeight() - 2) +1;
-		int obstacles = map.getLayerIndex("Obstacles");
-		int frontiere = map.getLayerIndex("Frontières");
+		int obstacles = map.getLayerIndex(Map_Globale.OBSTACLES);
+		int frontiere = map.getLayerIndex(Map_Globale.FRONTIERES);
 		while(Math.abs(x-xJoueur)<3 && Math.abs(y-yJoueur) < 3
 				&& map.getTileId( x, y, obstacles) != 0 && map.getTileId(x,y,frontiere) == 1) { //tant que la case x,y n'est pas une case vide
 			x = rand.nextInt(map.getWidth()-2)+1;
