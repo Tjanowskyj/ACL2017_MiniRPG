@@ -26,8 +26,6 @@ public class Jeu extends StateBasedGame {
 		this.addState(new Map2());
 		this.addState(new GameOver());
 	}
-
-	
 	
 	@Override
 	public void initStatesList(GameContainer game) throws SlickException {
@@ -41,7 +39,7 @@ public class Jeu extends StateBasedGame {
 		try {
 			agc = new AppGameContainer(new Jeu(NAME));
 			agc.setTargetFrameRate(FPS);
-			agc.setDisplayMode(1024, 800, false); //largeur, hauteur, plein écran
+			agc.setDisplayMode(1024, 736, false); //largeur, hauteur, plein écran
 			//agc.setFullscreen(true);
 			agc.setShowFPS(true);//affichage du nombre d'images par seconde
 			agc.start(); // lancement du jeu
