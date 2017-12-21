@@ -49,7 +49,7 @@ Fonctionnalités :
     Certains cases du labyrinthe sont spéciales : 
         • trésor : si le héros arrive sur la case il a gagné le jeu 
         • pièges : quand un personnage arrive sur la case il subit des dégâts  
-        • potion : le héro récupère des pdv.
+        • potion : le héro récupère des pv.
     
     
     Pour un eventuel Sprint 4 : 
